@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
     <h1>Hi there! mettle tech project 2022</h1>
-    <h2>hlw! there</h2>
+    <h2>hlw! there buddy</h2>
     </div>
   );
 }
