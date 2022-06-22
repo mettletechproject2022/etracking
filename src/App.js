@@ -5,7 +5,7 @@ import Login from './components/login/login';
 function App() {
   return (
     <div className="App">
-   <h1>Hello I am Ratnadeep</h1>
+   <h1>Hello I am Ratnadeep Dey</h1>
     {/* <h1>Hi there! This is mettle tech project 2022</h1>
     <h2>hi! there buddy here...</h2> */}
     <Login/>
