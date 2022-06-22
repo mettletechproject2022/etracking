@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Login from './components/login/login';
 
 function App() {
   return (
     <div className="App">
-    <h1>Hi there! mettle tech project 20</h1>
-    <h2>hi! there buddy here...2022</h2>
+   
+    {/* <h1>Hi there! This is mettle tech project 2022</h1>
+    <h2>hi! there buddy here...</h2> */}
+    <Login/>
     </div>
   );
 }
