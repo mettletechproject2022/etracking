@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Login from './components/login/login';
+import Home from './components/home/home';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
 
 function App() {
   return (
@@ -9,7 +11,14 @@ function App() {
     {/* <h1>Hi there! This is mettle tech project 2022</h1>
     <h2>hi! there buddy here...</h2>
     <h2>hi! there buddy here...</h2> */}
-    <Login/>
+    <BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<Login/>}/>
+      <Route path="/home" element={<Home/>}/>
+
+    </Routes>
+    </BrowserRouter>
+    
     </div>
   );
 }
