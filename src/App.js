@@ -1,7 +1,8 @@
 import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import Login from './components/login/login';
 import Home from './components/home/home';
+import Register from './components/register/register';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import ManageUser from './components/manageuser/ManageUser';
 
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/" element={<Login/>}/>
       <Route path="/home" element={<Home/>}/>
       <Route path="/manageuser" element={<ManageUser/>}/>
+      <Route path="/register" element={<Register/>}/>
     </Routes>
     </BrowserRouter>
     
