@@ -2,6 +2,7 @@ import "./register.css";
 //import TextBox from 'react-native-password-eye'; 
 
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 function Register() {
   const {
@@ -17,6 +18,8 @@ function Register() {
     reset();
   };
 
+
+  const [gender, setGender] = useState();
 
   // console.log(watch());
 
@@ -75,11 +78,13 @@ function Register() {
               <input
                 type="text"
                 className={`form-control ${errors.email && "invalid"}`}
-                {...register("email", { required: "Email is Required" ,
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address",
-                }})}
+                {...register("email", {
+                  required: "Email is Required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address",
+                  }
+                })}
                 onKeyUp={() => {
                   trigger("email");
                 }}
@@ -93,15 +98,16 @@ function Register() {
               <input
                 type="text"
                 className={`form-control ${errors.phone && "invalid"}`}
-                {...register("phone", { required: "Phone is Required",
-                pattern: {
-                  value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
-                  message: "Invalid phone no",
-                },
-               })}
-               onKeyUp={() => {
-                trigger("phone");
-              }}
+                {...register("phone", {
+                  required: "Phone is Required",
+                  pattern: {
+                    value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
+                    message: "Invalid phone no",
+                  },
+                })}
+                onKeyUp={() => {
+                  trigger("phone");
+                }}
               />
               {errors.phone && (
                 <small className="text-danger">{errors.phone.message}</small>
@@ -111,19 +117,20 @@ function Register() {
               <label className="col-form-label"><b>Communication Address:</b></label>
               <textarea
                 className={`form-control ${errors.message && "invalid"}`}
-                {...register("message", { required: "address is Required",
-                minLength: {
-                  value: 10,
-                  message: "Minimum Required length is 10",
-                },
-                maxLength: {
-                  value: 50,
-                  message: "Maximum allowed length is 50 ",
-                }
-               })}
-               onKeyUp={() => {
-                trigger("message");
-              }}
+                {...register("message", {
+                  required: "address is Required",
+                  minLength: {
+                    value: 10,
+                    message: "Minimum Required length is 10",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message: "Maximum allowed length is 50 ",
+                  }
+                })}
+                onKeyUp={() => {
+                  trigger("message");
+                }}
               ></textarea>
               {errors.message && (
                 <small className="text-danger">{errors.message.message}</small>
@@ -134,87 +141,95 @@ function Register() {
               <label className="col-form-label"><b>Permanent Address:</b></label>
               <textarea
                 className={`form-control ${errors.message && "invalid"}`}
-                {...register("message", { required: "address is Required",
-                minLength: {
-                  value: 10,
-                  message: "Minimum Required length is 10",
-                },
-                maxLength: {
-                  value: 50,
-                  message: "Maximum allowed length is 50 ",
-                }
-               })}
-               onKeyUp={() => {
-                trigger("message");
-              }}
+                {...register("message", {
+                  required: "address is Required",
+                  minLength: {
+                    value: 10,
+                    message: "Minimum Required length is 10",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message: "Maximum allowed length is 50 ",
+                  }
+                })}
+                onKeyUp={() => {
+                  trigger("message");
+                }}
               ></textarea>
               {errors.message && (
                 <small className="text-danger">{errors.message.message}</small>
               )}
-            </div>
-           
+            </div><br />
 
-            <div className="form-group">
+
+            {/* <div className="form-group">
               <label className="col-form-label"><b>Gender:</b></label>
               <p> <input type="radio"/> Male</p>
               <p> <input type="radio"/> Female</p>
               <p> <input type="radio"/> Others</p>
-              </div>
+              </div> */}
+            <div>
+              <label className="col-form-label"><b>Gender:</b></label><br />
+              <input type="radio" name="gender" value="Male" onChange={e => setGender(e.target.value)} />Male <br />
+              <input type="radio" name="gender" value="Female" onChange={e => setGender(e.target.value)} />Female<br />
+              <input type="radio" name="gender" value="Female" onChange={e => setGender(e.target.value)} />Others<br />
+
+            </div>
 
 
+            <div>
+              <label className="col-form-label"><b>Designation:</b><br /><br />
+                <p><input type="checkbox" /> Frontend Developer </p>
+                <p><input type="checkbox" /> Backend Developer</p>
+                <p><input type="checkbox" /> Database manager</p></label>
 
-          <div>
-          <label className="col-form-label"><b>Designation:</b><br></br>
-          <p><input type="checkbox"/> Frontend Developer </p>
-          <p><input type="checkbox"/> Backend Developer</p>
-          <p><input type="checkbox"/> Database manager</p></label>
-
-          </div>
-          
-
-          <div>
-          <label className="col-form-label"><b>User Type:</b></label>
-          <select id = "dropdown">
-   
-    <option value="1">choose option</option>
-    <option value="2">User</option>
-    <option value="3">Admin</option>
-    </select>
-          </div>
+            </div>
 
 
-          <div>
-          <label className="col-form-label"><b>Directory:</b></label>
-          <select id = "dropdown">
-    <option value="1">choose option</option>
-    <option value="2">c:/mettletech/developer/</option>
-    <option value="3">c:/mettletech/developer/20222001</option>
-    <option value="4">c:/mettletech/developer/20222002</option>
-    <option value="5">c:/mettletech/developer/20222003</option>
-    <option value="6">c:/mettletech/developer/20222004</option>
-    <option value="7">c:/mettletech/developer/20222005</option>
-    <option value="8">c:/mettletech/developer/20222006</option>
-    <option value="8">c:/mettletech/developer/20222007</option>
-     </select>
-          </div>
+            <div>
+              <label className="col-form-label"><b>User Type:</b></label>
+              <select id="dropdown1">
 
-          <div className="form-group">
-          <label className="col-form-label"><b>Password:</b></label>
-           <input type="password"/>
-           </div>
+                <option value="1">choose option</option>
+                <option value="2">User</option>
+                <option value="3">Admin</option>
+              </select>
+            </div><br/>
 
-           <div className="form-group">
-          <label className="col-form-label"><b>Confirm Password:</b></label>
-           <input type="password"/>
-          </div>
-                      
-          
 
-            <input
-              type="submit"
-              className="btn btn-primary my-3"
-              value="Registered"
-            />
+            <div>
+              <label className="col-form-label"><b>Directory:</b></label>
+              <select id="dropdown2">
+                <option value="1">choose option</option>
+                <option value="2">c:/mettletech/developer/</option>
+                <option value="3">c:/mettletech/developer/20222001</option>
+                <option value="4">c:/mettletech/developer/20222002</option>
+                <option value="5">c:/mettletech/developer/20222003</option>
+                <option value="6">c:/mettletech/developer/20222004</option>
+                <option value="7">c:/mettletech/developer/20222005</option>
+                <option value="8">c:/mettletech/developer/20222006</option>
+                <option value="8">c:/mettletech/developer/20222007</option>
+              </select>
+            </div><br/>
+
+            <div className="form-group">
+              <label className="col-form-label"><b>Enter Password:</b></label>
+              <input id="password1" type="password" placeholder="Enter Password...." />
+            </div><br/>
+
+            <div className="form-group">
+              <label className="col-form-label"><b>Confirm Password:</b></label>
+              <input id="password1" type="password" placeholder="Re-enter Password...." />
+            </div><br/>
+
+
+            <div className="register">
+              <input
+                type="submit"
+                className="btn btn-primary my-3"
+                value="Register"
+              />
+            </div>
           </form>
         </div>
       </div>
