@@ -50,7 +50,7 @@ const navigate=useNavigate()
 
 
   return(
-    <div className='wrapper'>
+    <div className='wrapper4'>
       {/* <h3>Mettle Tech</h3><br></br> */}
       <img src={logo} className="logoo" alt="MettleTech--User/Admin" />
 
@@ -68,7 +68,7 @@ const navigate=useNavigate()
 
         <br></br>
 
-        <button type="submit" className='btn btn-success btn-lg'  style={{width:100 + '%'}}>CHANGE PASSWORD</button>
+        <button type="submit" className='btn btn-primary btn-lg'  style={{width:100 + '%'}}>CHANGE PASSWORD</button>
       </form>
     </div>
   )

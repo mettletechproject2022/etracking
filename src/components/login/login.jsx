@@ -119,7 +119,7 @@ const navigate=useNavigate()
           <a className='forgot' href='/forgot'>Forgot Password?</a>
         </div>
 
-        <button type="submit" className='btn btn-success btn-lg'  style={{width:100 + '%'}}>LOGIN</button>
+        <button type="submit" className='btn btn-secondary btn-lg'  style={{width:100 + '%'}}>LOGIN</button>
       </form>
     </div>
   )

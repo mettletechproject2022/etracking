@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import logo from "../assets/logo.png";
+import logo2 from "../assets/logo2.png";
 import "../login.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
@@ -52,9 +52,9 @@ const navigate=useNavigate()
 
 
   return(
-    <div className='wrapper'>
+    <div className='wrapper2'>
       {/* <h3>Mettle Tech</h3><br></br> */}
-      <img src={logo} className="logoo" alt="MettleTech--User/Admin" />
+      <img src={logo2} className="logoo2" alt="MettleTech--User/Admin" />
 
 
 
