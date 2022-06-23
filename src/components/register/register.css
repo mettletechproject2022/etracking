@@ -46,7 +46,7 @@
     font-family: serif;
   }
 
-  .App {
+  div.container1 {
     overflow:hidden;
     flex-direction:column;
     justify-content:center;
