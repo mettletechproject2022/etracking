@@ -1,7 +1,10 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import Login from './components/login/login';
 import Home from './components/home/home';
+import Forgot from './components/login/forgotPass/forgot';
+import ChangePassword from './components/login/changePassword/changePass';
+import OTP from './components/login/otp/otp';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Login/>}/>
       <Route path="/home" element={<Home/>}/>
+      <Route path="/forgot" element={<Forgot/>}/>
+      <Route path="/changePass" element={<ChangePassword/>}/>
+      <Route path='/otp' element={<OTP/>}/>
 
     </Routes>
     </BrowserRouter>
