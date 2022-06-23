@@ -45,3 +45,16 @@
     border-color: #033783;
     font-family: serif;
   }
+
+  .App {
+    overflow:hidden;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+   
+    background: #ff00cc; 
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc); 
+    background: linear-gradient(to right, #333399, #ff00cc); 
+  
+  }
