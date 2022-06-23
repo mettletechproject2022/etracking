@@ -16,7 +16,7 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Login/>}/>
       <Route path="/home" element={<Home/>}/>
-      <Route path="/ManageUser" element={<ManageUser/>}/>
+      <Route path="/manageuser" element={<ManageUser/>}/>
     </Routes>
     </BrowserRouter>
     
