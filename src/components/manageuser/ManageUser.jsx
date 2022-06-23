@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useState, useEffect} from 'react';
 import BootstrapTable from "react-bootstrap-table-next";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import paginationFactory from "react-bootstrap-table2-paginator";
 import "./ManageUser.css";
 
 function ManageUser(){
@@ -11,14 +12,15 @@ function ManageUser(){
     },[]);
     const getData=()=>{
         axios("https://jsonplaceholder.typicode.com/comments").then((res)=>{
-                console.log(res.data);
+                // console.log(res.data);
                 setData(res.data);
     });
     };
     const columns=[
         {
             dataField:"postId",
-            text:"ID"
+            text:"ID",
+            // sort:true
         },
         {
             dataField:"email",
@@ -26,7 +28,8 @@ function ManageUser(){
         },
         {
             dataField:"name",
-            text:"Name"
+            text:"Name",
+            // sort:true,
         },
     ];
 
@@ -41,7 +44,12 @@ function ManageUser(){
                     <button className="manageuser-button1">Delete</button>
                 </div>
                 <div className="tablediv">
-                    <BootstrapTable keyField="id" data={data} columns={columns} striped hover condensed/>
+                    <BootstrapTable keyField="id" data={data} columns={columns} 
+                    striped 
+                    hover 
+                    condensed
+                    pagination = {paginationFactory()}
+                    />
                 </div>
             </div>
         );
