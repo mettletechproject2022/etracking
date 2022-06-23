@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.manage{
+    text-align: left;
+    width: 100%;
+}
+.manageuserHead{
+    /* background-color: rgb(255, 255, 255); */
+    width: 100%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    color: rgb(196, 3, 170);
+}
+.managemenu{
+    /* background-color: bisque; */
+    padding-left: 3px;
+}
+.manageuser-button{
+    background-color: rgb(236, 1, 205);
+    font-size: 15px;
+    margin: 15px;
+    color: white;
+    height: 28px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: none;
+}
+.manageuser-button1{
+    background-color: rgb(32, 89, 248);
+    font-size: 15px;
+    margin: 15px;
+    color: white;
+    height: 28px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: none;
+}
+.tablediv{
+    padding-left: 5px;
+}
