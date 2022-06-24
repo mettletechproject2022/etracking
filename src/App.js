@@ -32,7 +32,7 @@ function App() {
       <Route path="/changePass" element={<ChangePassword/>}/>
       <Route path='/otp' element={<OTP/>}/>
       
-      <Route path="users" element={<Homes />}></Route>
+      <Route path="/homes" element={<Homes />}/>
       <Route path="/data_visualization" element={<Data_visualization/>}/>
       <Route path="/manageuser" element={<ManageUser/>}/>
       <Route path="/register" element={<Register/>}/>
