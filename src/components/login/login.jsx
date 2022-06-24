@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import logo from "./assets/logo.png";
 import "./login.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 export const Login=()=>{
   const [email,setEmail]=useState('');
@@ -22,8 +23,16 @@ export const Login=()=>{
     setPasswordError('');
     setPassword(e.target.value);
   }
+const navigate=useNavigate()
+  // const handleLogin=()=>{
+  //   console.log('login clicked')
+  //   navigate('/home')
+  //  }
+
   const handleFormSubmit=(e)=>{
    e.preventDefault();
+
+ 
 
    //check if email is empty
    if(email!==''){
@@ -35,6 +44,7 @@ export const Login=()=>{
             setEmailError('');
             if(password==='raj'){
               setSuccessMsg('You are successfully logged in')
+               navigate('/home')
             }
             else{
               setPasswordError('password does not match with the email address');
@@ -81,25 +91,35 @@ export const Login=()=>{
      <br></br>
      </>}
      
-        <label>Email</label>
-        <input type="text" className='form-control custom-input' placeholder="Enter your email address"
+        <div><label className='mr-auto'>Email</label></div>
+        <i className='login-icon fas fa-user'></i>        
+        <input type="text" className='form-control custom-input ' placeholder="Enter your email address"
         onChange={handleEmailChange} value={email}/>
         {emailError&&<div className='error-msg'>{emailError}</div>}
 
         <br></br>
 
-        <label>Password</label>
+        <div><label>Password</label></div>
         <input type="password" className='form-control custom-input' placeholder='Enter your password'
         onChange={handlePasswordChange} value={password}/>
         {passwordError&&<div className='error-msg'>{passwordError}</div>}
 
         <br></br>
 
-        <div className="text-right p-t-8 p-b-31">
-          <a href='#'>Forgot Password?</a>
+        <div className="mb-3">
+          <div className="custom-control custom-checkbox">
+            <input type="checkbox" className="custom-control-input" id="customCheck1"/>
+            <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+          </div>
         </div>
 
-        <button type="submit" className='btn btn-success btn-lg' style={{width:100 + '%'}}>LOGIN</button>
+
+
+        <div>
+          <a className='forgot' href='/forgot'>Forgot Password?</a>
+        </div>
+
+        <button type="submit" className='btn btn-secondary btn-lg'  style={{width:100 + '%'}}>LOGIN</button>
       </form>
     </div>
   )
