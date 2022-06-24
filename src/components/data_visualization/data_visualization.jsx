@@ -44,11 +44,7 @@ const Data_visualization = () => {
           <img src={file} alt="images" />
         </a>
       </div>
-      <div className="sec">
-        <a href="#">
-          <img src={file} alt="images" />
-        </a>
-      </div>
+     
       </div>
   );
 };
