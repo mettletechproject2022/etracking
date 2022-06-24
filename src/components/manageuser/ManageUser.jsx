@@ -12,7 +12,7 @@ function ManageUser(){
     useEffect(()=>{getData();
     },[]);
     const getData=()=>{
-        axios("https://mocki.io/v1/1168b6c4-f1f6-4e28-8f0d-504f2d48dca7").then((res)=>{
+        axios("https://mocki.io/v1/cf7b2b39-505a-42a4-8d7e-fe7a1a263a23").then((res)=>{
                 // console.log(res.data);
                 setData(res.data);
     });
