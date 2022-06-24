@@ -30,7 +30,7 @@ function Register() {
       <div className="row justify-content-sm-center pt-5">
         <div className="col-sm-6 shadow round pb-3">
           <h1 className="text-center pt-3 text-secondary">Registration Form</h1>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form className="registerform" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <label className="col-form-label"><b>Full Name:</b></label>
               <input

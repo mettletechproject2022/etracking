@@ -6,6 +6,10 @@
     box-shadow: none !important; 
   }
 
+  form.registerform {
+    text-align: left;
+  }
+
   .text-secondary {
     font-family: fantasy;
     background-color: black;
