@@ -16,8 +16,9 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import ManageUser from './components/manageuser/ManageUser';
 import Data_visualization from './components/data_visualization/data_visualization';
 import Homes from './components/pages/homes/Homes';
+import  Popupbutt  from './components/login/popUpButt/popUpButt';
 import Sidebar from './components/sidebar/Sidebar';
-import Topbar from './components/topbar/topbar'
+import Topbar from './components/topbar/topbar';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <Route path="/data_visualization" element={<Data_visualization/>}/>
       <Route path="/manageuser" element={<ManageUser/>}/>
       <Route path="/register" element={<Register/>}/>
+      <Route path="/popupbutt" element={<Popupbutt/>}/>
     </Routes>
     </BrowserRouter>
     

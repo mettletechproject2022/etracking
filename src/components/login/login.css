@@ -109,13 +109,14 @@ background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, F
   margin-bottom: 10px;
 }
 .success-msg{
-  width:100%;
-  background-color: #0f834d;
-  color: #fff;
+  width:50%;
+ color: #0f834d;
   font-weight:600;
-  padding:20px;
 }
 .logoo2{
   cursor: pointer;
-  width:16%
+  width:12%
+}
+.pointer{
+  cursor: pointer;
 }
