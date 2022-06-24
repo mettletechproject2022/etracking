@@ -19,6 +19,14 @@ function ManageUser(){
     };
     const selectRow={
         mode:"checkbox",
+        clickToSelect: true,
+        bgColor: '#F7C5C5',
+        onSelect: (row, isSelect, rowIndex, e) => {
+          console.log(row.id);
+        //   console.log(isSelect);
+        //   console.log(rowIndex);
+        //   console.log(e);
+        },
     }
     const columns=[
         {
