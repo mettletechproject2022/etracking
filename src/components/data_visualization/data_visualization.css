@@ -22,8 +22,8 @@ img{
 .sec a{
     
     background: crimson;
-    
-
+    text-decoration: none;
+    text-align: center;
     font-size: 20px;
     font-weight: 500;
     padding: 10px 30px;
