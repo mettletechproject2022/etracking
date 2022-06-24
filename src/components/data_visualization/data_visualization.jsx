@@ -7,41 +7,49 @@ const Data_visualization = () => {
       <div className="sec">
         <a href="#">
           <img src={file} alt="images" />
+          developer 1
         </a>
       </div>
       <div className="sec">
         <a href="#">
           <img src={file} alt="images" />
+          developer 2
         </a>
       </div>
       <div className="sec">
         <a href="#">
           <img src={file} alt="images" />
+          developer 3
         </a>
       </div>
       <div className="sec">
         <a href="#">
           <img src={file} alt="images" />
+          developer 4
         </a>
       </div>
       <div className="sec">
         <a href="#">
           <img src={file} alt="images" />
+          developer 5
         </a>
       </div>
       <div className="sec">
         <a href="#">
           <img src={file} alt="images" />
+          developer 6
         </a>
       </div>
       <div className="sec">
         <a href="#">
           <img src={file} alt="images" />
+          developer 7
         </a>
       </div>
       <div className="sec">
         <a href="#">
           <img src={file} alt="images" />
+          developer 8
         </a>
       </div>
      
