@@ -12,13 +12,21 @@ function ManageUser(){
     useEffect(()=>{getData();
     },[]);
     const getData=()=>{
-        axios("https://mocki.io/v1/1168b6c4-f1f6-4e28-8f0d-504f2d48dca7").then((res)=>{
+        axios("https://mocki.io/v1/cf7b2b39-505a-42a4-8d7e-fe7a1a263a23").then((res)=>{
                 // console.log(res.data);
                 setData(res.data);
     });
     };
     const selectRow={
         mode:"checkbox",
+        clickToSelect: false,
+        bgColor: '#F7C5C5',
+        onSelect: (row, isSelect, rowIndex, e) => {
+          console.log(row.id);
+        //   console.log(isSelect);
+        //   console.log(rowIndex);
+        //   console.log(e);
+        },
     }
     const columns=[
         {
@@ -52,6 +60,90 @@ function ManageUser(){
                 return true;
             }
         },
+        {
+            dataField: 'usertype',
+            text: 'User Type',
+            editor: {
+              type: Type.SELECT,
+              options: [{
+                value: 'Admin',
+                label: 'Admin'
+              }, {
+                value: 'User',
+                label: 'User'
+              },]
+            }
+          },
+        {
+            dataField:"age",
+            text:"Age",
+            editable:true,
+        },
+        {
+            dataField:"phone",
+            text:"Phone Number",
+            editable:true,
+        },
+        {
+            dataField:"communicationaddress",
+            text:"Communication Address",
+            editable:true,
+        },
+        {
+            dataField:"permanentaddress",
+            text:"Permanent Address",
+            editable:true,
+        },
+        {
+            dataField: 'dob',
+            text: 'DOB',
+            type: 'date',
+            formatter: (cell) => {
+              let dateObj = cell;
+              if (typeof cell !== 'object') {
+                dateObj = new Date(cell);
+              }
+              return `${('0' + dateObj.getUTCDate()).slice(-2)}/${('0' + (dateObj.getUTCMonth() + 1)).slice(-2)}/${dateObj.getUTCFullYear()}`;
+            },
+            editor: {
+              type: Type.DATE
+            }
+          },
+          {
+            dataField: 'gender',
+            text: 'Gender',
+            editor: {
+              type: Type.SELECT,
+              options: [{
+                value: 'Male',
+                label: 'Male'
+              }, {
+                value: 'Female',
+                label: 'Female'
+              }, {
+                value: 'Others',
+                label: 'Others'
+              },]
+            }
+          },
+          {
+            dataField: 'designation',
+            text: 'Designation',
+            editor: {
+              type: Type.SELECT,
+              options: [{
+                value: 'Frontend Developer',
+                label: 'Frontend Developer'
+              }, {
+                value: 'Backend Developer',
+                label: 'Backend Developer'
+              }, {
+                value: 'Database Manager',
+                label: 'Database Manager'
+              },]
+            }
+          },
+
     ];
 
         return (
