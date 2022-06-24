@@ -5,7 +5,7 @@ import Forgot from './components/login/forgotPass/forgot';
 import ChangePassword from './components/login/changePassword/changePass';
 import OTP from './components/login/otp/otp';
 
-import "./App.css";
+// import "./App.css";
 
 
 
