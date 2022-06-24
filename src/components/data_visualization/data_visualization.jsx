@@ -6,25 +6,25 @@ const Data_visualization = () => {
       <h1>data_visualization</h1>
       <div className="sec">
         <a href="#">
-          <img src={file} className='moji' alt="images" />
+          <img src={file} className='mojii' alt="images" />
           developer 1
         </a>
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='moji' alt="images" />
+          <img src={file} className='mojii' alt="images" />
           developer 2
         </a>
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='moji' alt="images" />
+          <img src={file} className='mojii' alt="images" />
           developer 3
         </a>
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='moji' alt="images" />
+          <img src={file} className='mojii' alt="images" />
           developer 4
         </a>
       </div>
@@ -42,13 +42,13 @@ const Data_visualization = () => {
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='moji' alt="images" />
+          <img src={file} className='mojii' alt="images" />
           developer 7
         </a>
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='moji' alt="images" />
+          <img src={file} className='mojii' alt="images" />
           developer 8
         </a>
       </div>
