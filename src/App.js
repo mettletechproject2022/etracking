@@ -11,6 +11,7 @@ import OTP from './components/login/otp/otp';
 import Register from './components/register/register';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import ManageUser from './components/manageuser/ManageUser';
+import Data_visualization from './components/data_visualization/data_visualization';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
       <Route path="/forgot" element={<Forgot/>}/>
       <Route path="/changePass" element={<ChangePassword/>}/>
       <Route path='/otp' element={<OTP/>}/>
-
+      <Route path="/data_visualization" element={<Data_visualization/>}/>
       <Route path="/manageuser" element={<ManageUser/>}/>
       <Route path="/register" element={<Register/>}/>
     </Routes>
