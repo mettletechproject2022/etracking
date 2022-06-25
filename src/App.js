@@ -12,7 +12,7 @@ import Dev1 from './components/data_visualization/imageDisplay/dev1';
 
 // for sidebar
 import Sidebar from "./components/sidebar/Sidebar";
-import Dashboard from "./pages/Dashboard.jsx";
+
 import DataVisualisation from "./pages/DataVisualisation";
 import History from "./pages/History";
 import Notification from "./pages/Notification";
@@ -44,8 +44,7 @@ function App() {
 <BrowserRouter>
 <Sidebar>
     <Routes>
-      {/* <Route path="/" element={<Dashboard/>}/> */}
-      {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
+      <Route path="/sidebar" element={<Sidebar />}/>
       <Route path="/dataVisualisation" element={<DataVisualisation/>}/>
       <Route path="/history" element={<History/>}/>
       <Route path="/logout" element={<Logout/>}/>

@@ -14,12 +14,7 @@ const Sidebar = ({children}) => {
     const toggle =() => setIsOpen (!isOpen);
     
     const menuItem=[
-        {
-            path:"/dashboard",
-            name:"dashboard",
-            icon:<FaRegUserCircle/>
-        },
-        
+      
         {
             path:"/profile",
             name:"Profile",
