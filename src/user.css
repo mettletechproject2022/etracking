@@ -2,6 +2,10 @@
     flex: 4;
     padding: 20px;
   }
+
+  .userTitle {
+    color: #444;
+  }
   
   .userTitleContainer {
     display: flex;
@@ -121,7 +125,7 @@
   }
   
   .userUpdateRight{
-      display: flex;
+      /* display: flex; */
       flex-direction: column;
       justify-content: space-between;
   }
@@ -132,8 +136,8 @@
   }
   
   .userUpdateImg{
-      width: 100px;
-      height: 100px;
+    width: 200px;
+    height: 300px;
       border-radius: 10px;
       object-fit: cover;
       margin-right: 20px;
@@ -143,12 +147,14 @@
       cursor: pointer;
   }
   
-  .userUpdateButton{
-      border-radius: 5px;
-      border: none;
-      padding: 5px;
-      cursor: pointer;
-      background-color: darkblue;
-      color: white;
-      font-weight: 600;
-  }
+  .userUpdateButton {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    font-weight: 600;
+    margin-left: 70px;
+    margin-top: 10px;
+}
