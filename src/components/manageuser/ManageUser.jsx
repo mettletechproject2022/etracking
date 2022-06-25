@@ -5,6 +5,7 @@ import BootstrapTable from "react-bootstrap-table-next";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import paginationFactory from "react-bootstrap-table2-paginator";
 import cellEditFactory,{Type} from "react-bootstrap-table2-editor";
+import { useNavigate } from "react-router-dom";
 import "./ManageUser.css";
 
 function ManageUser(){
@@ -17,6 +18,18 @@ function ManageUser(){
                 setData(res.data);
     });
     };
+    const navigate=useNavigate();
+
+    const handleCreate=()=>{
+      console.log('create user clicked')
+      navigate('/register')
+    }
+
+    const handleEdit=()=>{
+      console.log('edit clicked')
+      navigate('/edit')
+    }
+
     const selectRow={
         mode:"checkbox",
         clickToSelect: false,
@@ -28,6 +41,9 @@ function ManageUser(){
         //   console.log(e);
         },
     }
+
+   
+
     const columns=[
         {
             dataField:"id",
@@ -152,8 +168,8 @@ function ManageUser(){
                     <h2>Manage Users</h2>
                 </div>
                 <div className="managemenu">
-                    <button className="manageuser-button">Create User</button>
-                    <button className="manageuser-button1">Edit</button>
+                    <button className="manageuser-button" onClick={handleCreate} >Create User</button>
+                    <button className="manageuser-button1" onClick={handleEdit}>Edit</button>
                     <button className="manageuser-button1">Delete</button>
                 </div>
                 <div className="tablediv">
