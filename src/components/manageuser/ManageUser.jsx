@@ -29,7 +29,7 @@ function ManageUser(){
         },
     }
     function imageFormatter(cell, row){
-      return (<img style={{width:50}} src={cell} alt={"identity"}/>)
+      return (<img style={{width:80}} src={cell} alt={"identity"}/>)
     }
     const columns=[
         {
@@ -75,6 +75,7 @@ function ManageUser(){
         {
             dataField: 'usertype',
             text: 'User Type',
+            style: {'min-width': '100px'},
             align: 'center',
             headerAlign: 'center',
             editor: {
@@ -97,7 +98,7 @@ function ManageUser(){
         },
         {
             dataField:"phone",
-            text:"Phone Number",
+            text:"Phone No.",
             editable:true,
             align: 'center',
             headerAlign: 'center',
@@ -132,6 +133,9 @@ function ManageUser(){
             // align: 'center',
             headerAlign: 'center',
             editable:true,
+            editor: {
+              type: Type.TEXTAREA
+            },
             validator:(newValue,row,column)=>{
               newValue=newValue.trim();
               if(newValue === ""){
@@ -149,6 +153,9 @@ function ManageUser(){
             headerAlign: 'center',
             style: {'min-width': '250px'},
             editable:true,
+            editor: {
+              type: Type.TEXTAREA
+            },
             validator:(newValue,row,column)=>{
               newValue=newValue.trim();
               if(newValue === ""){
@@ -241,7 +248,7 @@ function ManageUser(){
                     striped 
                     hover 
                     condensed
-                    pagination = {paginationFactory()}
+                    pagination = {paginationFactory({sizePerPage:7})}
                     cellEdit = {cellEditFactory({
                         mode:"click",
                         blurToSave:true,
