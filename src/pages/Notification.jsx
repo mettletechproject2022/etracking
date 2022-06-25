@@ -2,7 +2,7 @@ import React from 'react';
 
 const Notification = () => {
   return (
-    <div>
+    <div style={{backgroundColor: "lightblue"}}>
       Notification
     </div>
   );

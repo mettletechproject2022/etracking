@@ -29,7 +29,7 @@ function ManageUser(){
         },
     }
     function imageFormatter(cell, row){
-      return (<img style={{width:50}} src={cell}/>)
+      return (<img style={{width:50}} src={cell} alt={"identity"}/>)
     }
     const columns=[
         {
@@ -86,12 +86,36 @@ function ManageUser(){
             dataField:"phone",
             text:"Phone Number",
             editable:true,
+            validator:(newValue,row,column)=>{
+              newValue=newValue.trim();
+              if(newValue === ""){
+                  return{
+                      valid:false,
+                      message:"Please Enter Phone Number"
+                  }
+              }
+              else if(isNaN(newValue)){
+                  return{
+                      valid:false,
+                      message:"Please enter Numbaric value"
+                  }
+              }
+              else if(newValue.length < 10 || newValue.length > 10)
+              {
+                return{
+                  valid:false,
+                  message:"Phone number must be 10 Digits"
+              }
+              }
+              return true;
+          }
         },
         {
             dataField:"communicationaddress",
             text:"Communication Address",
             editable:true,
             validator:(newValue,row,column)=>{
+              newValue=newValue.trim();
               if(newValue === ""){
                   return{
                       valid:false,
@@ -105,6 +129,7 @@ function ManageUser(){
             text:"Permanent Address",
             editable:true,
             validator:(newValue,row,column)=>{
+              newValue=newValue.trim();
               if(newValue === ""){
                   return{
                       valid:false,
