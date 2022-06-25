@@ -37,15 +37,24 @@ function ManageUser(){
             text:"ID",
             // sort:true
             editable:false,
+            align: 'center',
+            headerAlign: 'center'
+
         },
         {
             dataField:"email",
             text:"Email",
             editable:false,
+            align: 'center',
+            headerAlign: 'center'
+
         },
         {
             dataField:"name",
             text:"Name",
+            align: 'center',
+            headerAlign: 'center',
+            style: {'white-space': 'nowrap'},
             // sort:true,
             validator:(newValue,row,column)=>{
                 if(newValue === ""){
@@ -66,6 +75,8 @@ function ManageUser(){
         {
             dataField: 'usertype',
             text: 'User Type',
+            align: 'center',
+            headerAlign: 'center',
             editor: {
               type: Type.SELECT,
               options: [{
@@ -80,12 +91,16 @@ function ManageUser(){
         {
             dataField:"age",
             text:"Age",
+            align: 'center',
+            headerAlign: 'center',
             editable:false,
         },
         {
             dataField:"phone",
             text:"Phone Number",
             editable:true,
+            align: 'center',
+            headerAlign: 'center',
             validator:(newValue,row,column)=>{
               newValue=newValue.trim();
               if(newValue === ""){
@@ -113,6 +128,9 @@ function ManageUser(){
         {
             dataField:"communicationaddress",
             text:"Communication Address",
+            style: {'min-width': '250px'},
+            // align: 'center',
+            headerAlign: 'center',
             editable:true,
             validator:(newValue,row,column)=>{
               newValue=newValue.trim();
@@ -127,6 +145,9 @@ function ManageUser(){
         {
             dataField:"permanentaddress",
             text:"Permanent Address",
+            // align: 'center',
+            headerAlign: 'center',
+            style: {'min-width': '250px'},
             editable:true,
             validator:(newValue,row,column)=>{
               newValue=newValue.trim();
@@ -142,6 +163,8 @@ function ManageUser(){
             dataField: 'dob',
             text: 'DOB',
             type: 'date',
+            align: 'center',
+            headerAlign: 'center',
             formatter: (cell) => {
               let dateObj = cell;
               if (typeof cell !== 'object') {
@@ -156,6 +179,8 @@ function ManageUser(){
           {
             dataField: 'gender',
             text: 'Gender',
+            align: 'center',
+            headerAlign: 'center',
             editor: {
               type: Type.SELECT,
               options: [{
@@ -173,6 +198,9 @@ function ManageUser(){
           {
             dataField: 'designation',
             text: 'Designation',
+            align: 'center',
+            headerAlign: 'center',
+            style: {'white-space': 'nowrap'},
             editor: {
               type: Type.SELECT,
               options: [{
@@ -190,6 +218,8 @@ function ManageUser(){
           {
               dataField:'photo',
               text: "Photo",
+              align: 'center',
+            headerAlign: 'center',
               editable:false,
               formatter: imageFormatter             
           }
@@ -217,6 +247,8 @@ function ManageUser(){
                         blurToSave:true,
                     })}
                     selectRow ={selectRow}
+                    // wrapperClasses="table-responsive"
+                    // rowClasses="text-nowrap"
                     />
                 </div>
             </div>
