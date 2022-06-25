@@ -7,9 +7,10 @@
   display: flex;
   
 }
-.main {
+main {
   width: 100%;
   padding: 20px;
+  
 }
 .sidebar {
   background: black;
@@ -25,19 +26,19 @@
   color: white;
 }
 .logo {
-  font-size: 30px;
+  font-size: 20px;
   color: azure;
 }
 
 .bars {
   display: flex;
-  font-size: 21px;
-  margin-left: 50px;
+  font-size: 28px;
+  margin-left: 30px;
 }
 .link {
   display: flex;
   color: white;
-  padding: 10px 10px;
+  padding: 10px 15px;
   gap: 15px;
   transition: all 0.5s;
   

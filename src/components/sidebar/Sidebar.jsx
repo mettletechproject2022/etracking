@@ -8,7 +8,7 @@ import '../../App.css';
 
 
 
-const Sidebar = ({Children}) => {
+const Sidebar = ({children}) => {
 
     const [isOpen,setIsOpen]=useState(false);
     const toggle =() => setIsOpen (!isOpen);
@@ -56,10 +56,10 @@ const Sidebar = ({Children}) => {
     ]
   return (
     <div className='container'>
-        <div style={{width:isOpen ?  "300px" : "50px"}} className="sidebar">
+        <div style={{width:isOpen ?  "300px" : "60px"}} className="sidebar">
             <div className="top_section">
                 <h1 style={{display:isOpen ?  "block" : "none"}} className="logo">Mettle Tech</h1>
-                <div style={{marginLeft:isOpen ?  "50px" : "0px"}} className="bars">
+                <div style={{marginLeft:isOpen ?  "60px" : "0px"}} className="bars">
                     <FaBars onClick={toggle}/>
                 </div>
             </div>
@@ -72,12 +72,12 @@ const Sidebar = ({Children}) => {
             ))
             }
         </div>
-        <main>{Children}</main>
+        <main>{children}</main>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
 
 
 
