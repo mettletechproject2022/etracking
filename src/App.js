@@ -9,7 +9,7 @@ import Register from './components/register/register';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 // import ManageUser from './components/manageuser/ManageUser';
 import Data_visualization from './components/data_visualization/data_visualization';
-
+import Dev1 from './components/data_visualization/imageDisplay/dev1';
 import Sidebar from './components/sidebar/Sidebar';
 import Dashboard from './components/pages/Dashboard.jsx';
 import DataVisualisation from './components/pages/DataVisualisation';
@@ -34,6 +34,7 @@ function App() {
       <Route path='/otp' element={<OTP/>}/>
       <Route path='/popupbutt' element={<Popupbutt/>}/>
       <Route path="/data_visualization" element={<Data_visualization/>}/>
+      <Route path="/dev1" element={<Dev1/>}/>
       <Route path="/manageuser" element={<ManageUser/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/sidebar" element={<Sidebar />}/>

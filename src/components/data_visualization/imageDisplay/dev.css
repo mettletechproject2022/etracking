@@ -1,0 +1,38 @@
+h1{
+    color: blue;
+}
+.sec{
+    height: 25%;
+    width: 25%;
+    position: relative;
+    padding: 12px;
+    display: inline-flex;
+    background-color:none;
+    text-decoration: dotted;
+    padding-left: 20px;
+    text-align: justify;
+    border-radius: 5px;
+    
+}
+.mojii{
+    height: 100%;
+    width: 100%;
+    padding: 1px;
+}
+.sec a{
+    color: aqua;
+    background: crimson;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.sec a:hover {
+    color: crimson;
+    background: steelblue;
+}

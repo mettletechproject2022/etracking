@@ -1,30 +1,32 @@
 import "./data_visualization.css";
 import file from "./asset/file.png";
+
+
 const Data_visualization = () => {
   return (
     <div className="con">
       <h1>data_visualization</h1>
       <div className="sec">
-        <a href="#">
-          <img src={file} className='mojii' alt="images" />
+        <a href="dev1">
+          <img src={file} className='moji' alt="images" />
           developer 1
         </a>
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='mojii' alt="images" />
+          <img src={file} className='moji' alt="images" />
           developer 2
         </a>
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='mojii' alt="images" />
+          <img src={file} className='moji' alt="images" />
           developer 3
         </a>
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='mojii' alt="images" />
+          <img src={file} className='moji' alt="images" />
           developer 4
         </a>
       </div>
@@ -42,13 +44,13 @@ const Data_visualization = () => {
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='mojii' alt="images" />
+          <img src={file} className='moji' alt="images" />
           developer 7
         </a>
       </div>
       <div className="sec">
         <a href="#">
-          <img src={file} className='mojii' alt="images" />
+          <img src={file} className='moji' alt="images" />
           developer 8
         </a>
       </div>
