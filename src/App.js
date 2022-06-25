@@ -7,7 +7,6 @@ import Popupbutt from "./components/login/popUpButt/popUpButt";
 import Register from "./components/register/register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import ManageUser from './components/manageuser/ManageUser';
-<<<<<<< HEAD
 import Data_visualization from './components/data_visualization/data_visualization';
 import Dev1 from './components/data_visualization/imageDisplay/dev1';
 import Sidebar from './components/sidebar/Sidebar';
@@ -19,9 +18,7 @@ import ManageUser from './components/pages/ManageUser';
 import Notification from './components/pages/Notification';
 import Profile from './components/pages/Profile';
 // import './App.css';
-=======
 // import Data_visualization from './components/data_visualization/data_visualization';
->>>>>>> a01fdccd51629c7afdbf33c0a962a624ac5b1ddd
 
 import Sidebar from "./components/sidebar/Sidebar";
 import Dashboard from "./pages/Dashboard.jsx";
@@ -36,7 +33,6 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
    
     <BrowserRouter>
     <Routes>
@@ -64,7 +60,6 @@ function App() {
 
     </BrowserRouter>
     
-=======
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login />} />
@@ -92,7 +87,6 @@ function App() {
           </Routes>
         </Sidebar>
       </BrowserRouter>
->>>>>>> a01fdccd51629c7afdbf33c0a962a624ac5b1ddd
     </div>
   );
 }
