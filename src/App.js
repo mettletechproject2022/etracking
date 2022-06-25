@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ManageUser from './components/manageuser/ManageUser';        
 import Data_visualization from './components/data_visualization/data_visualization';
 import Dev1 from './components/data_visualization/imageDisplay/dev1';
-
+// import User from "./components/User/user";
 // for sidebar
 import Sidebar from "./components/sidebar/Sidebar";
 import Dashboard from "./pages/Dashboard.jsx";
@@ -38,12 +38,14 @@ function App() {
       {/* <Route path="/manageUser" element={<ManageUser/>}/> */}
       <Route path="/register" element={<Register/>}/>
       <Route path="/sidebar" element={<Sidebar />}/>
+      {/* <Route path="/header" element={<Header />}/> */}
       </Routes>
 
 </BrowserRouter>
 <BrowserRouter>
 <Sidebar>
     <Routes>
+    {/* <Route path="/user" element={<User/>}/> */}
       {/* <Route path="/" element={<Dashboard/>}/> */}
       {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
       <Route path="/dataVisualisation" element={<DataVisualisation/>}/>
