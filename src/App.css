@@ -9,8 +9,7 @@
 }
 main {
   width: 100%;
-  padding: 20px;
-  
+  padding: 28px;
 }
 .sidebar {
   background: black;
@@ -32,7 +31,7 @@ main {
 
 .bars {
   display: flex;
-  font-size: 28px;
+  font-size: 20px;
   margin-left: 30px;
 }
 .link {
@@ -55,7 +54,7 @@ main {
 }
 .icon,
 .link_text {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 /* .App {

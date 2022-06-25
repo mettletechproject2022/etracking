@@ -22,12 +22,12 @@ function ManageUser(){
 
     const handleCreate=()=>{
       console.log('create user clicked')
-      navigate('/register')
+      navigate("/register")
     }
 
     const handleEdit=()=>{
       console.log('edit clicked')
-      navigate('/edit')
+      navigate("/edit")
     }
 
     const selectRow={
@@ -41,24 +41,33 @@ function ManageUser(){
         //   console.log(e);
         },
     }
-
-   
-
+    function imageFormatter(cell, row){
+      return (<img style={{width:80}} src={cell} alt={"identity"}/>)
+    }
     const columns=[
         {
             dataField:"id",
             text:"ID",
             // sort:true
             editable:false,
+            align: 'center',
+            headerAlign: 'center'
+
         },
         {
             dataField:"email",
             text:"Email",
             editable:false,
+            align: 'center',
+            headerAlign: 'center'
+
         },
         {
             dataField:"name",
             text:"Name",
+            align: 'center',
+            headerAlign: 'center',
+            style: {'white-space': 'nowrap'},
             // sort:true,
             validator:(newValue,row,column)=>{
                 if(newValue === ""){
@@ -79,6 +88,9 @@ function ManageUser(){
         {
             dataField: 'usertype',
             text: 'User Type',
+            style: {'min-width': '100px'},
+            align: 'center',
+            headerAlign: 'center',
             editor: {
               type: Type.SELECT,
               options: [{
@@ -93,27 +105,86 @@ function ManageUser(){
         {
             dataField:"age",
             text:"Age",
-            editable:true,
+            align: 'center',
+            headerAlign: 'center',
+            editable:false,
         },
         {
             dataField:"phone",
-            text:"Phone Number",
+            text:"Phone No.",
             editable:true,
+            align: 'center',
+            headerAlign: 'center',
+            validator:(newValue,row,column)=>{
+              newValue=newValue.trim();
+              if(newValue === ""){
+                  return{
+                      valid:false,
+                      message:"Please Enter Phone Number"
+                  }
+              }
+              else if(isNaN(newValue)){
+                  return{
+                      valid:false,
+                      message:"Please enter Numbaric value"
+                  }
+              }
+              else if(newValue.length < 10 || newValue.length > 10)
+              {
+                return{
+                  valid:false,
+                  message:"Phone number must be 10 Digits"
+              }
+              }
+              return true;
+          }
         },
         {
             dataField:"communicationaddress",
             text:"Communication Address",
+            style: {'min-width': '250px'},
+            // align: 'center',
+            headerAlign: 'center',
             editable:true,
+            editor: {
+              type: Type.TEXTAREA
+            },
+            validator:(newValue,row,column)=>{
+              newValue=newValue.trim();
+              if(newValue === ""){
+                  return{
+                      valid:false,
+                      message:"Please Enter Communicatipon Address"
+                  }
+              }
+              return true;}
         },
         {
             dataField:"permanentaddress",
             text:"Permanent Address",
+            // align: 'center',
+            headerAlign: 'center',
+            style: {'min-width': '250px'},
             editable:true,
+            editor: {
+              type: Type.TEXTAREA
+            },
+            validator:(newValue,row,column)=>{
+              newValue=newValue.trim();
+              if(newValue === ""){
+                  return{
+                      valid:false,
+                      message:"Please Enter Permanent Address"
+                  }
+              }
+              return true;}
         },
         {
             dataField: 'dob',
             text: 'DOB',
             type: 'date',
+            align: 'center',
+            headerAlign: 'center',
             formatter: (cell) => {
               let dateObj = cell;
               if (typeof cell !== 'object') {
@@ -128,6 +199,8 @@ function ManageUser(){
           {
             dataField: 'gender',
             text: 'Gender',
+            align: 'center',
+            headerAlign: 'center',
             editor: {
               type: Type.SELECT,
               options: [{
@@ -145,6 +218,9 @@ function ManageUser(){
           {
             dataField: 'designation',
             text: 'Designation',
+            align: 'center',
+            headerAlign: 'center',
+            style: {'white-space': 'nowrap'},
             editor: {
               type: Type.SELECT,
               options: [{
@@ -159,6 +235,14 @@ function ManageUser(){
               },]
             }
           },
+          {
+              dataField:'photo',
+              text: "Photo",
+              align: 'center',
+            headerAlign: 'center',
+              editable:false,
+              formatter: imageFormatter             
+          }
 
     ];
 
@@ -177,12 +261,14 @@ function ManageUser(){
                     striped 
                     hover 
                     condensed
-                    pagination = {paginationFactory()}
+                    pagination = {paginationFactory({sizePerPage:7})}
                     cellEdit = {cellEditFactory({
                         mode:"click",
                         blurToSave:true,
                     })}
                     selectRow ={selectRow}
+                    // wrapperClasses="table-responsive"
+                    // rowClasses="text-nowrap"
                     />
                 </div>
             </div>

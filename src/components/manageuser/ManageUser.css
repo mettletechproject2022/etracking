@@ -5,17 +5,23 @@
 .manage{
     text-align: left;
     width: 100%;
+    height: 45px;
+
 }
 .manageuserHead{
     /* background-color: rgb(255, 255, 255); */
     width: 100%;
+    height: 55px;
+    padding-top: 5px;
     padding-left: 15px;
     padding-bottom: 15px;
     color: rgb(196, 3, 170);
+    background-color: black;
+    
 }
 .managemenu{
-    /* background-color: bisque; */
-    padding-left: 3px;
+    /* background-color: rgb(27, 242, 238); */
+    padding-left: 5px;
 }
 .manageuser-button{
     background-color: rgb(236, 1, 205);
@@ -23,14 +29,14 @@
     margin: 15px;
     color: white;
     height: 28px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
     border: none;
 }
 .manageuser-button1{
     background-color: rgb(32, 89, 248);
     font-size: 15px;
-    margin: 15px;
+    margin: 25px;
     color: white;
     height: 28px;
     padding-left: 6px;
