@@ -9,16 +9,13 @@ import '../../App.css';
 
 
 const Sidebar = ({Children}) => {
+
     const [isOpen,setIsOpen]=useState(false);
     const toggle =() => setIsOpen (!isOpen);
     
     const menuItem=[
-        {
-            path:"/",
-            name:"dashboard",
-            icon: <FaTh/>
-           
-        },
+      
+        
         {
             path:"/profile",
             name:"Profile",
@@ -61,7 +58,7 @@ const Sidebar = ({Children}) => {
     <div className='container'>
         <div style={{width:isOpen ?  "300px" : "50px"}} className="sidebar">
             <div className="top_section">
-                <h1 style={{display:isOpen ?  "block" : "none"}} className="logo"></h1>
+                <h1 style={{display:isOpen ?  "block" : "none"}} className="logo">Mettle Tech</h1>
                 <div style={{marginLeft:isOpen ?  "50px" : "0px"}} className="bars">
                     <FaBars onClick={toggle}/>
                 </div>
@@ -100,44 +97,3 @@ export default Sidebar
 
 
 
-// import "./sidebar.css"
-
-// export default function Sidebar() {
-//   return (
-//     <div className="sidebar">
-//         <div className="sidebarWrapper">
-//             <div className="sidebarMenu">
-//                 <h3 className="sidebarTitle">Dashboard</h3>
-//                 <ul className="sidebarList">
-               
-//                     <li className="sidebarListItem ">
-//                         MangeUser
-                        
-//                     </li>
-                   
-//                     <li className="sidebarListItem ">
-//                         Profile 
-                        
-//                     </li>
-//                     <li className="sidebarListItem">
-//                         DV
-//                     </li>
-//                     <li className="sidebarListItem">
-//                         Notification
-//                     </li>
-//                     <li className="sidebarListItem">
-//                         History
-//                     </li>
-//                     <li className="sidebarListItem">
-//                         Logout
-//                     </li>
-//                 </ul>
-//             </div>
-//         </div>
-//         <div className="rightbar"></div>
-//     </div>
-
-
-  
-//   )
-// }
