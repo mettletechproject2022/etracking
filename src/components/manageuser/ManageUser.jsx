@@ -28,6 +28,9 @@ function ManageUser(){
         //   console.log(e);
         },
     }
+    function imageFormatter(cell, row){
+      return (<img style={{width:50}} src={cell}/>)
+    }
     const columns=[
         {
             dataField:"id",
@@ -77,7 +80,7 @@ function ManageUser(){
         {
             dataField:"age",
             text:"Age",
-            editable:true,
+            editable:false,
         },
         {
             dataField:"phone",
@@ -88,11 +91,27 @@ function ManageUser(){
             dataField:"communicationaddress",
             text:"Communication Address",
             editable:true,
+            validator:(newValue,row,column)=>{
+              if(newValue === ""){
+                  return{
+                      valid:false,
+                      message:"Please Enter Communicatipon Address"
+                  }
+              }
+              return true;}
         },
         {
             dataField:"permanentaddress",
             text:"Permanent Address",
             editable:true,
+            validator:(newValue,row,column)=>{
+              if(newValue === ""){
+                  return{
+                      valid:false,
+                      message:"Please Enter Permanent Address"
+                  }
+              }
+              return true;}
         },
         {
             dataField: 'dob',
@@ -143,6 +162,12 @@ function ManageUser(){
               },]
             }
           },
+          {
+              dataField:'photo',
+              text: "Photo",
+              editable:false,
+              formatter: imageFormatter             
+          }
 
     ];
 
