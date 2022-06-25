@@ -2,7 +2,7 @@ import "./data_visualization.css";
 import file from "./asset/file.png";
 const Data_visualization = () => {
   return (
-    <div className="container">
+    <div className="con">
       <h1>data_visualization</h1>
       <div className="sec">
         <a href="#">
