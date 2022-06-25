@@ -3,7 +3,7 @@ import {FaTh,FaBars,FaRegUserCircle,FaMinusCircle}from "react-icons/fa";
 import { IoIosNotifications,IoIosPeople,IoIosAlbums } from "react-icons/io";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { NavLink } from 'react-router-dom';
-import '../../App.css';
+// import './sidebar.css'
 
 
 
@@ -14,7 +14,11 @@ const Sidebar = ({children}) => {
     const toggle =() => setIsOpen (!isOpen);
     
     const menuItem=[
-      
+        {
+            path:"/dashboard",
+            name:"dashboard",
+            icon:<FaRegUserCircle/>
+        },
         
         {
             path:"/profile",
