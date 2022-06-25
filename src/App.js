@@ -9,14 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import ManageUser from './components/manageuser/ManageUser';
 import Data_visualization from './components/data_visualization/data_visualization';
 import Dev1 from './components/data_visualization/imageDisplay/dev1';
-import Sidebar from './components/sidebar/Sidebar';
-import Dashboard from './components/pages/Dashboard.jsx';
-import DataVisualisation from './components/pages/DataVisualisation';
-import History from './components/pages/History';
-import Logout from './components/pages/Logout';
-import ManageUser from './components/pages/ManageUser';
-import Notification from './components/pages/Notification';
-import Profile from './components/pages/Profile';
+
 // import './App.css';
 // import Data_visualization from './components/data_visualization/data_visualization';
 
