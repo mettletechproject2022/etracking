@@ -13,7 +13,7 @@ import Data_visualization from "./components/data_visualization/data_visualizati
 import Dev1 from "./components/data_visualization/imageDisplay/dev1";
 
 // for sidebar
-import Sidebar from "./components/sidebar/Sidebar";
+// import Sidebar from "./components/sidebar/Sidebar";
 
 import DataVisualisation from "./pages/DataVisualisation";
 import History from "./pages/History";
@@ -40,24 +40,30 @@ function App() {
           {/* <Route path="/manageUser" element={<ManageUser/>}/> */}
           <Route path="/register" element={<Register />} />
           <Route path="/edit" element={<Edit />} />
-          <Route path="/sidebar" element={<Sidebar />} />
+          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+          <Route path="/dataVisualisation" element={<DataVisualisation />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/manageUser" element={<ManageUser />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Sidebar>
           <Routes>
             <Route path="/sidebar" element={<Sidebar />} />
             <Route path="/dataVisualisation" element={<DataVisualisation />} />
             <Route path="/history" element={<History />} />
             <Route path="/logout" element={<Logout />} />
-            {/* <Route path="/manageusers" element={<ManageUser/>}/> */}
+             <Route path="/manageusers" element={<ManageUser/>}/>
             <Route path="/manageUser" element={<ManageUser />} />
             <Route path="/notification" element={<Notification />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </Sidebar>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }

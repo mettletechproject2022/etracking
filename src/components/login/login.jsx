@@ -51,7 +51,7 @@ export const Login = () => {
           setEmailError("");
           if (password === "raj") {
             setSuccessMsg("You are successfully logged in");
-            navigate("/sidebar");
+            navigate("/profile");
           } else {
             setPasswordError("password does not match with the email address");
           }

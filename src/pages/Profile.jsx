@@ -1,3 +1,6 @@
+import Sidebar from '../components/sidebar/Sidebar';
+import '../components/sidebar/sidebar.css'
+import '../App.css'
 import {
   CalendarToday,
   LocationSearching,
@@ -11,7 +14,10 @@ import "../user.css"
 
 export default function User() {
   return (
+    <div className="container-fluid2 p-0 d-flex flex-row">
+      <Sidebar/>
     <div className="user">
+      
       <div className="userTitleContainer">
         <h1 className="userTitle">Edit User</h1>
         <Link to="/newUser">
@@ -119,5 +125,6 @@ export default function User() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
