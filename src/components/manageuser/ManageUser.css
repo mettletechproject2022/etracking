@@ -3,6 +3,7 @@
     padding: 0px;
 }
 .manage{
+    padding-right: 70px;
     text-align: left;
     width: 100%;
     height: 45px;
@@ -25,23 +26,48 @@
 }
 .manageuser-button{
     background-color: rgb(236, 1, 205);
-    font-size: 15px;
+    font-size: 17px;
+    font-weight: 700;
     margin: 15px;
+    color: white;
+    height: 32px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: none;
+}
+.manageuser-button:hover{
+    box-shadow: 0px 0px 8px 1px black;
+    background-color: green;
+}
+.manageuser-button1{
+    background-color: rgb(32, 89, 248);
+    font-size: 17px;
+    font-weight: 700;
+    margin: 25px;
     color: white;
     height: 28px;
     padding-left: 8px;
     padding-right: 8px;
     border: none;
 }
-.manageuser-button1{
+.manageuser-button1:hover{
+    box-shadow: 0px 0px 8px 1px black;
+    background-color: red;
+}
+.manageuser-button11{
     background-color: rgb(32, 89, 248);
-    font-size: 15px;
+    font-size: 17px;
+    font-weight: 700;
     margin: 25px;
     color: white;
     height: 28px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
     border: none;
+}
+.manageuser-button11:hover{
+    box-shadow: 0px 0px 8px 1px black;
+    background-color: rgb(3, 119, 185);
 }
 .tablediv{
     padding-left: 5px;
@@ -50,4 +76,6 @@
 }
 .container-fluid{
     width:100%;
+    overflow-x: hidden;
+	overflow-y: visible;
 }

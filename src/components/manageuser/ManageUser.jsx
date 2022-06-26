@@ -295,7 +295,7 @@ function ManageUser(){
                 </div>
                 <div className="managemenu">
                     <button className="manageuser-button" onClick={handleCreate} >Create User</button>
-                    <button className="manageuser-button1" onClick={handleEdit}>Edit</button>
+                    <button className="manageuser-button11" onClick={handleEdit}>Edit</button>
                     <button className="manageuser-button1">Delete</button>
                 </div>
                 <div className="tablediv">
