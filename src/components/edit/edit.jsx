@@ -99,11 +99,15 @@ function Edit() {
                 type="text"
                 className={`form-control ${errors.phone && "invalid"}`}
                 {...register("phone", {
-                  required: "Phone is Required",
+                  required: "Phone Number is Required",
                   pattern: {
                     value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
                     message: "Invalid phone no",
                   },
+                  maxLength: {
+                    value: 10,
+                    message: "Maximum allowed length is 10",
+                  }
                 })}
                 onKeyUp={() => {
                   trigger("phone");
@@ -141,7 +145,7 @@ function Edit() {
               <label className="col-form-label"><b>Permanent Address:</b></label>
               <textarea
                 className={`form-control ${errors.message && "invalid"}`}
-                {...register("message", {
+                {...register("messages", {
                   required: "address is Required",
                   minLength: {
                     value: 10,
@@ -153,7 +157,7 @@ function Edit() {
                   }
                 })}
                 onKeyUp={() => {
-                  trigger("message");
+                  trigger("messages");
                 }}
               ></textarea>
               {errors.message && (
@@ -172,7 +176,7 @@ function Edit() {
               <label className="col-form-label"><b>Gender:</b></label><br />
               <input type="radio" name="gender" value="Male" onChange={e => setGender(e.target.value)} />Male <br />
               <input type="radio" name="gender" value="Female" onChange={e => setGender(e.target.value)} />Female<br />
-              <input type="radio" name="gender" value="Female" onChange={e => setGender(e.target.value)} />Others<br />
+              <input type="radio" name="gender" value="others" onChange={e => setGender(e.target.value)} />Others<br />
 
             </div>
 

@@ -306,7 +306,7 @@ function ManageUser(){
                         blurToSave:true,
                     })}
                     selectRow ={selectRow}
-                     wrapperClasses="table-responsive"
+                    wrapperClasses="table-responsive"
                     rowClasses="text-nowrap"
                     />
                 </div>
