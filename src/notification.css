@@ -1,19 +1,20 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
-.notification{
-    width: 100%;
+.notification {
+  width: 100%;
 }
-.head-notification{
-    margin-top: 5px;
-    width: 100%;
-    background-color: rgb(245, 245, 245);
+.head-notification {
+  margin-top: 5px;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
 }
-.head-notification h1{
-    color: black}
-.notify{
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 60px;
+.head-notification h1 {
+  color: black;
+}
+.notify {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 60px;
 }
