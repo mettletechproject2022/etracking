@@ -6,11 +6,11 @@ h1{
     width: 25%;
     position: relative;
     padding: 12px;
-    display: inline-flex;
+    display: inline-block;
     background-color:none;
     text-decoration: dotted;
     padding-left: 20px;
-    text-align: justify;
+    /* text-align: justify; */
     border-radius: 5px;
     
 } */
@@ -31,14 +31,16 @@ h1{
 
 
 .sec a{
+    position: relative;
     color: aqua;
     background: crimson;
     text-decoration: none;
     text-align: center;
+    margin-left: 15%;
     font-size: 20px;
     cursor: pointer;
     font-weight: 500;
-    padding: 10px 30px;
+    padding: 10px;
     margin-top: 20px;
     border-radius: 6px;
     border: 2px solid crimson;
