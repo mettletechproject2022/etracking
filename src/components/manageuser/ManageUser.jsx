@@ -21,6 +21,7 @@ function ManageUser(){
                 setData(res.data);
     });
     };
+    let select=[];
     const navigate=useNavigate();
 
     const handleCreate=()=>{
@@ -29,9 +30,10 @@ function ManageUser(){
     }
 
     const handleEdit=()=>{
+      if(select===true){
       console.log('edit clicked')
-      navigate("/edit")
-    }
+      navigate("/edit")}
+    };
 
     const selectRow={
         mode:"checkbox",
@@ -39,6 +41,7 @@ function ManageUser(){
         bgColor: '#F7C5C5',
         onSelect: (row, isSelect, rowIndex, e) => {
           console.log(row.id);
+          select=isSelect;
         //   console.log(isSelect);
         //   console.log(rowIndex);
         //   console.log(e);
@@ -300,7 +303,7 @@ function ManageUser(){
                     striped 
                     hover 
                     condensed
-                    pagination = {paginationFactory({sizePerPage:7})}
+                    pagination = {paginationFactory({sizePerPage:6})}
                     cellEdit = {cellEditFactory({
                         mode:"click",
                         blurToSave:true,
