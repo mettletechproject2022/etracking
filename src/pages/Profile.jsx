@@ -19,7 +19,7 @@ export default function User() {
     <div className="user">
       
       <div className="userTitleContainer">
-        <h1 className="userTitle">Edit User</h1>
+        <h1 className="userTitle">PROFILE</h1>
         <Link to="/newUser">
           <button className="userAddButton">Create</button>
         </Link>
@@ -32,8 +32,8 @@ export default function User() {
               alt=""
               className="userShowImg"
             />
-            <div className="userShowTopTitle">
-              <span className="userShowUsername">Anna Becker</span>
+           <div className="userShowTopTitle">
+              <span className="userShowUsername">Ankita Das</span>
               <span className="userShowUserTitle">Software Engineer</span>
             </div>
           </div>
@@ -41,7 +41,11 @@ export default function User() {
             <span className="userShowTitle">Account Details</span>
             <div className="userShowInfo">
               <PermIdentity className="userShowIcon" />
-              <span className="userShowInfoTitle">annabeck99</span>
+              <span className="userShowInfoTitle">ankitadas13</span>
+            </div>
+            <div className="userShowInfo">
+              <PhoneAndroid className="userShowIcon" />
+              <span className="userShowInfoTitle">Age - 24</span>
             </div>
             <div className="userShowInfo">
               <CalendarToday className="userShowIcon" />
@@ -50,15 +54,15 @@ export default function User() {
             <span className="userShowTitle">Contact Details</span>
             <div className="userShowInfo">
               <PhoneAndroid className="userShowIcon" />
-              <span className="userShowInfoTitle">+1 123 456 67</span>
+              <span className="userShowInfoTitle">+91 8978545687</span>
             </div>
             <div className="userShowInfo">
               <MailOutline className="userShowIcon" />
-              <span className="userShowInfoTitle">annabeck99@gmail.com</span>
+              <span className="userShowInfoTitle">ankitadas13@gmail.com</span>
             </div>
             <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
-              <span className="userShowInfoTitle">New York | USA</span>
+              <span className="userShowInfoTitle">Kolkata | INDIA</span>
             </div>
           </div>
         </div>
@@ -70,7 +74,7 @@ export default function User() {
                 <label>Username</label>
                 <input
                   type="text"
-                  placeholder="annabeck99"
+                  placeholder="ankitadas13"
                   className="userUpdateInput"
                 />
               </div>
@@ -78,7 +82,15 @@ export default function User() {
                 <label>Full Name</label>
                 <input
                   type="text"
-                  placeholder="Anna Becker"
+                  placeholder="Ankita Das"
+                  className="userUpdateInput"
+                />
+              </div>
+              <div className="userUpdateItem">
+                <label>Age</label>
+                <input
+                  type="text"
+                  placeholder="24"
                   className="userUpdateInput"
                 />
               </div>
@@ -86,7 +98,7 @@ export default function User() {
                 <label>Email</label>
                 <input
                   type="text"
-                  placeholder="annabeck99@gmail.com"
+                  placeholder="ankitadas13@gmail.com"
                   className="userUpdateInput"
                 />
               </div>
@@ -94,7 +106,7 @@ export default function User() {
                 <label>Phone</label>
                 <input
                   type="text"
-                  placeholder="+1 123 456 67"
+                  placeholder="+91 8978545687"
                   className="userUpdateInput"
                 />
               </div>
@@ -102,7 +114,7 @@ export default function User() {
                 <label>Address</label>
                 <input
                   type="text"
-                  placeholder="New York | USA"
+                  placeholder="Kolkata | INDIA"
                   className="userUpdateInput"
                 />
               </div>
@@ -122,7 +134,7 @@ export default function User() {
               <button className="userUpdateButton">Update</button>
             </div>
           </form>
-        </div>
+        </div> 
       </div>
     </div>
   </div>
