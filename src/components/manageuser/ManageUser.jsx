@@ -13,7 +13,7 @@ function ManageUser(){
     useEffect(()=>{getData();
     },[]);
     const getData=()=>{
-        axios("https://mocki.io/v1/cf7b2b39-505a-42a4-8d7e-fe7a1a263a23").then((res)=>{
+        axios("https://mocki.io/v1/895325ea-bdc4-41a5-b41f-429153b04a0a").then((res)=>{
                 // console.log(res.data);
                 setData(res.data);
     });
@@ -182,16 +182,9 @@ function ManageUser(){
         {
             dataField: 'dob',
             text: 'DOB',
-            type: 'date',
             align: 'center',
             headerAlign: 'center',
-            formatter: (cell) => {
-              let dateObj = cell;
-              if (typeof cell !== 'object') {
-                dateObj = new Date(cell);
-              }
-              return `${('0' + dateObj.getUTCDate()).slice(-2)}/${('0' + (dateObj.getUTCMonth() + 1)).slice(-2)}/${dateObj.getUTCFullYear()}`;
-            },
+            style: {'min-width': '120px'},            
             editor: {
               type: Type.DATE
             }
@@ -232,6 +225,47 @@ function ManageUser(){
               }, {
                 value: 'Database Manager',
                 label: 'Database Manager'
+              },]
+            }
+          },
+          {
+            dataField:"salary",
+            text:"Salary",
+            editable:true,
+            align: 'center',
+            headerAlign: 'center',
+            style: {'min-width': '100px'},
+            validator:(newValue,row,column)=>{
+              newValue=newValue.trim();
+              if(newValue === ""){
+                  return{
+                      valid:false,
+                      message:"Please Enter Salary"
+                  }
+              }
+              else if(isNaN(newValue)){
+                  return{
+                      valid:false,
+                      message:"Please enter Digits Only"
+                  }
+              }
+              return true;
+          }
+        },
+          {
+            dataField: 'senior',
+            text: 'Senior',
+            align: 'center',
+            headerAlign: 'center',
+            style: {'white-space': 'nowrap'},
+            editor: {
+              type: Type.SELECT,
+              options: [{
+                value: 'Souvik Mondal',
+                label: 'Souvik Mondal'
+              }, {
+                value: 'Mijanur Rahaman',
+                label: 'Mijanur Rahaman'
               },]
             }
           },
