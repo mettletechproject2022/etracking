@@ -291,7 +291,7 @@ function ManageUser(){
             <Sidebar/>
             <div className="manage">
                 <div className="manageuserHead">
-                    <h2>Manage Users</h2>
+                    <h2>MANAGE USERS</h2>
                 </div>
                 <div className="managemenu">
                     <button className="manageuser-button" onClick={handleCreate} >Create User</button>

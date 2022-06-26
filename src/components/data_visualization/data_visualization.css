@@ -1,7 +1,7 @@
 h1{
     color: black;
 }
-.sec{
+/* .sec{
     height: 25%;
     width: 25%;
     position: relative;
@@ -13,7 +13,22 @@ h1{
     text-align: justify;
     border-radius: 5px;
     
+} */
+
+.sec {
+    height: 45%;
+    width: 25%;
+    position: relative;
+    padding: 10px;
+    display: inline-flex;
+    background-color: none;
+    text-decoration: dotted;
+    padding-left: 20px;
+    text-align: justify;
+    border-radius: 5px;
 }
+
+
 
 .sec a{
     color: aqua;
@@ -32,4 +47,11 @@ h1{
 .sec a:hover {
     color: crimson;
     background: steelblue;
+}
+
+.con h1 {
+    color: #250d62;
+    font-family: fantasy;
+    letter-spacing: 1px;
+    margin: 10px;
 }

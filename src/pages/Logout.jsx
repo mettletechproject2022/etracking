@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../components/sidebar/Sidebar";
 import "../components/sidebar/sidebar.css";
-import "../App.css";
+import "../pages/logout.css";
 import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
@@ -15,8 +15,8 @@ const Logout = () => {
   return (
     <div className="container-fluid3 p-0 d-flex flex-row">
       <Sidebar />
-      <div>
-        <button type="button" onClick={() => handleLogout()}>
+      <div className="LogoutButton">
+        <button id="LogoutButton" type="button" onClick={() => handleLogout()}>
           Logout
         </button>
       </div>

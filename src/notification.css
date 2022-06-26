@@ -6,12 +6,14 @@
   width: 100%;
 }
 .head-notification {
-  margin-top: 5px;
+  margin: 20px;
   width: 100%;
   background-color: rgb(245, 245, 245);
 }
 .head-notification h1 {
-  color: black;
+  color:#250d62;
+    font-family: fantasy;
+    letter-spacing: 1px;
 }
 .notify {
   margin-left:  10px;
