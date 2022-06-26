@@ -24,15 +24,18 @@
     padding-left: 70px;
     padding-right: 70px;
     text-align: center;
+    border-radius: 5px;
   }
 
   #dropdown2 {
     text-align: center;
     margin-left: 12px;
+    border-radius: 5px;
   }
 
   #password1 {
     margin-left: 5px;
+    border-radius: 5px;
   }
 
   .shadow{
