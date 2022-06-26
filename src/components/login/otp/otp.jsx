@@ -55,8 +55,8 @@ export const OTP = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if(Mob!==''&& OtpError==''){
-      alert('Password change succesfully');
-          navigate('/')
+      alert('redirecting you to resetpassword page..');
+          navigate('/changePass')
     }
   
 

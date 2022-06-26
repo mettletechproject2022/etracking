@@ -55,6 +55,10 @@ export const ChangePassword = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    if(password!==''&& cpasswordError==''){
+      alert(' Reset Password succesfully');
+          navigate('/')
+    }
 
     //check if password is empty
   };
@@ -97,8 +101,9 @@ export const ChangePassword = () => {
           type="submit"
           className="btn btn-info btn-lg"
           style={{ width: 100 + "%" }}
+          onClick={ handleFormSubmit}
         >
-          NEXT
+          CHANGE PASSWORD
         </button>
       </form>
     </div>

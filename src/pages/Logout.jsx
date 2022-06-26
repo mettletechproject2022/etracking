@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "../components/sidebar/Sidebar";
 import "../components/sidebar/sidebar.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +10,7 @@ const Logout = () => {
 
   const handleLogout = () => {
     localStorage.clear();
+    alert('You are now logged out')
     navigate("/");
   };
 
@@ -16,7 +18,7 @@ const Logout = () => {
     <div className="container-fluid3 p-0 d-flex flex-row">
       <Sidebar />
       <div>
-        <button type="button" onClick={() => handleLogout()}>
+        <button type="button" class="btn btn-outline-danger" onClick={() => handleLogout()}>
           Logout
         </button>
       </div>
