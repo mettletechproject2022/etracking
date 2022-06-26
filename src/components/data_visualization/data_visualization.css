@@ -1,19 +1,58 @@
 h1{
     color: black;
 }
-/* .sec{
+.sec{
     height: 25%;
     width: 25%;
     position: relative;
     padding: 12px;
-    display: inline-block;
+    display: inline-flex;
     background-color:none;
     text-decoration: dotted;
     padding-left: 20px;
-    /* text-align: justify; */
-  /*  border-radius: 5px;
+    text-align: justify;
+    border-radius: 5px;
     
-} */
+}
+
+.sec a{
+    color: white;
+    background: crimson;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.sec a:hover {
+    color: crimson;
+    background: steelblue;
+}
+
+.con h1 {
+    color: #250d62;
+    font-family: fantasy;
+    letter-spacing: 1px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* h1{
+    color: black;
+}
 
 .sec {
     height: 45%;
@@ -56,4 +95,4 @@ h1{
     font-family: fantasy;
     letter-spacing: 1px;
     margin: 10px;
-}
+} */
