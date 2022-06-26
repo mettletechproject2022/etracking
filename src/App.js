@@ -9,7 +9,7 @@ import Register from "./components/register/register";
 import Edit from "./components/edit/edit";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ManageUser from "./components/manageuser/ManageUser";
-// import Data_visualization from "./components/data_visualization/data_visualization";
+import Dev2 from "./components/data_visualization/imageDisplay/dev2";
 import DataVisualisation from "../src/pages/DataVisualisation";
 import Dev1 from "./components/data_visualization/imageDisplay/dev1";
 import Unauth from "../src/pages/unauth";
@@ -42,7 +42,7 @@ function App() {
           <Route path="/popupbutt" element={<Popupbutt />} />
           {/* <Route path="/data_visualization" element={<Data_visualization />} /> */}
           <Route path="/dev1" element={<Dev1 />} />
-          {/* <Route path="/manageUser" element={<ManageUser/>}/> */}
+          <Route path="/dev2" element={<Dev2/>}/>
           <Route path="/register" element={<Register />} />
           <Route path="/edit" element={<Edit />} />
           {/* <Route path="/sidebar" element={<Sidebar />} /> */}

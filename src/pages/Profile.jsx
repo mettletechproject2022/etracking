@@ -28,7 +28,7 @@ export default function User() {
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://images.unsplash.com/photo-1590873802674-55bb8f947bc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29tYW4lMjBibGF6ZXJ8ZW58MHx8MHx8&w=1000&q=80"
               alt=""
               className="userShowImg"
             />
@@ -123,7 +123,7 @@ export default function User() {
               <div className="userUpdateUpload">
                 <img
                   className="userUpdateImg"
-                  src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  src="https://images.unsplash.com/photo-1590873802674-55bb8f947bc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29tYW4lMjBibGF6ZXJ8ZW58MHx8MHx8&w=1000&q=80"
                   alt=""
                 />
                 <label htmlFor="file">

@@ -60,7 +60,7 @@ const Sidebar = ({ children }) => {
     },
 
     {
-      path: "/logout",
+      path: "/",
       name: "Logout",
       icon: <FaMinusCircle />,
     },

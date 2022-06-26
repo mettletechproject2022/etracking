@@ -29,7 +29,7 @@ function Edit() {
     <div className="container1 pt-5">
       <div className="row justify-content-sm-center pt-5">
         <div className="col-sm-6 shadow round pb-3">
-          <h1 className="text-center pt-3 text-secondary">Edit</h1>
+          <h1 className="text-center pt-3 text-secondary">EDIT USER</h1>
           <form className="registerform" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <label className="col-form-label"><b>Full Name:</b></label>

@@ -1,0 +1,20 @@
+#LogoutButton {
+    color: white;
+    background-color: black;
+    font-family: fantasy;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+    padding: 22px;
+}
+
+.LogoutButton{
+margin-left: 45%;
+margin-top: 5%;
+}
+
+#root .container-fluid3{
+background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg');
+background-repeat: round;
+}
