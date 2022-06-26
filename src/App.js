@@ -9,13 +9,14 @@ import Register from "./components/register/register";
 import Edit from "./components/edit/edit";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ManageUser from "./components/manageuser/ManageUser";
-import Data_visualization from "./components/data_visualization/data_visualization";
+// import Data_visualization from "./components/data_visualization/data_visualization";
+import DataVisualisation from "../src/pages/DataVisualisation";
 import Dev1 from "./components/data_visualization/imageDisplay/dev1";
 
 // for sidebar
 // import Sidebar from "./components/sidebar/Sidebar";
 
-import DataVisualisation from "./pages/DataVisualisation";
+// import DataVisualisation from "./pages/DataVisualisation";
 import History from "./pages/History";
 import Notification from "./pages/Notification";
 // import ManageUser from "./pages/ManageUser";
@@ -35,7 +36,7 @@ function App() {
           <Route path="/otp" element={<OTP />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
           <Route path="/popupbutt" element={<Popupbutt />} />
-          <Route path="/data_visualization" element={<Data_visualization />} />
+          {/* <Route path="/data_visualization" element={<Data_visualization />} /> */}
           <Route path="/dev1" element={<Dev1 />} />
           {/* <Route path="/manageUser" element={<ManageUser/>}/> */}
           <Route path="/register" element={<Register />} />

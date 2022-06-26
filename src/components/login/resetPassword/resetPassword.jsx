@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
+import Sidebar from '../../sidebar/Sidebar';
 import "../login.css";
+import "../../sidebar/sidebar.css";
+import "../../../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
@@ -17,10 +20,10 @@ const[PrePassError,setPrePassError]=useState('');
 
   const [Dis,setDis]=useState(true);
 
-  const checkPrePass=(e)=>{
-    e.preventDefault();
+  // const checkPrePass=(e)=>{
+  //   e.preventDefault();
   
-  }
+  // }
 
   const handlePrePass=(e)=>{
     setPrePassError('');
@@ -80,11 +83,17 @@ const[PrePassError,setPrePassError]=useState('');
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+  if(PrePass!=='' && passwordError=='' && cpasswordError==''){
+    alert('Password Change Succesfully')
+      navigate('/')
+  }
 
-    //check if password is empty
+   
   };
 
   return (
+    <div className="container-fluid7 p-0 d-flex flex-row">
+      <Sidebar/>
     <div className="wrapper3">
       {/* <h3>Mettle Tech</h3><br></br> */}
       <img src={logo} className="logoo" alt="MettleTech--User/Admin" />
@@ -140,6 +149,7 @@ const[PrePassError,setPrePassError]=useState('');
           CHANGE PASSWORD
         </button>
       </form>
+    </div>
     </div>
   );
 };
