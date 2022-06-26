@@ -16,15 +16,16 @@
   }
   
   .userAddButton {
-    width: 80px;
+    width: 135px;
     border: none;
     padding: 5px;
-    background-color: teal;
+    background-color: #dc3545;
     border-radius: 5px;
     cursor: pointer;
     color: white;
     font-size: 16px;
-  }
+    margin-right: 98px;
+}
   
   .userContainer {
     display: flex;
