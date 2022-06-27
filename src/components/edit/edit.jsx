@@ -3,7 +3,7 @@ import "./edit.css";
 
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 function Edit() {
   const {
     register,
@@ -12,11 +12,13 @@ function Edit() {
     reset,
     trigger,
   } = useForm();
-
+  const navigate=useNavigate();
   const onSubmit = (data) => {
     console.log(data);
+    navigate("/manageuser")
     reset();
   };
+  
 
 
   const [gender, setGender] = useState();
