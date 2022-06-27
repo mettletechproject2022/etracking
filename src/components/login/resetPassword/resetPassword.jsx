@@ -27,7 +27,7 @@ export const ChangePassword = () => {
   const handlePrePass = (e) => {
     setPrePassError("");
     setPrePass(e.target.value);
-    if (e.target.value === "raj") {
+    if (e.target.value !== "") {
       setDis(false);
 
       if (e.target.value !== "") {
@@ -36,6 +36,7 @@ export const ChangePassword = () => {
         setPrePassError("Previous password required");
       }
     }
+    else setDis(true);
   };
 
   const handlePasswordChange = (e) => {
@@ -81,7 +82,11 @@ export const ChangePassword = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (PrePass !== "" && passwordError == "" && cpasswordError == "") {
+
+    if (PrePass === JSON.parse(localStorage.getItem("data")).password && passwordError == "" && cpasswordError == "") {
+      var data = JSON.parse(localStorage.getItem("data"));
+      data["password"] = cpassword;
+      localStorage.setItem("data", JSON.stringify(data));
       alert("Password Change Succesfully");
       navigate("/");
     }

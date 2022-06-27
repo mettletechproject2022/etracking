@@ -10,7 +10,6 @@ const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.clear();
     alert('You are now logged out')
     navigate("/");
   };

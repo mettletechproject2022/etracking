@@ -7,8 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ children }) => {
 
-  const adminEmail= "raj@gmail.com";
-  const userEmail= "atanu@gmail.com";
+
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -106,7 +105,7 @@ const Sidebar = ({ children }) => {
         </div>
       </div>
       <div>
-      {localStorage.getItem('email')===adminEmail? sideList(menuItem)  : sideList(menuItem2)}
+      {(localStorage.getItem("data"))&&JSON.parse(localStorage.getItem("data")).usertype==="Admin"? sideList(menuItem)  : sideList(menuItem2)}
     </div>
     </div>
   )
