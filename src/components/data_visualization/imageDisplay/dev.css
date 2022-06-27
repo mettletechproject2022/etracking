@@ -7,7 +7,7 @@
     height: 22%;
     width: 25%;
     position: relative;
-    padding: 5px;
+    padding: 10px;
     display: inline-flex;
     background-color:none;
     text-decoration: dotted;
@@ -30,6 +30,7 @@
     font-weight: 500;
     padding: 10px 30px;
     margin-top: 20px;
+    margin-left: 10px;
     border-radius: 6px;
     border: 2px solid crimson;
     transition: all 0.3s ease;
