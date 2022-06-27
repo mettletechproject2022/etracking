@@ -21,6 +21,7 @@ function ManageUser(){
                 setData(res.data);
     });
     };
+    let select=[];
     const navigate=useNavigate();
 
     const handleCreate=()=>{
@@ -29,9 +30,10 @@ function ManageUser(){
     }
 
     const handleEdit=()=>{
+      if(select===true){
       console.log('edit clicked')
-      navigate("/edit")
-    }
+      navigate("/edit")}
+    };
 
     const selectRow={
         mode:"checkbox",
@@ -39,6 +41,7 @@ function ManageUser(){
         bgColor: '#F7C5C5',
         onSelect: (row, isSelect, rowIndex, e) => {
           console.log(row.id);
+          select=isSelect;
         //   console.log(isSelect);
         //   console.log(rowIndex);
         //   console.log(e);
@@ -288,11 +291,11 @@ function ManageUser(){
             <Sidebar/>
             <div className="manage">
                 <div className="manageuserHead">
-                    <h2>Manage Users</h2>
+                    <h2>MANAGE USERS</h2>
                 </div>
                 <div className="managemenu">
                     <button className="manageuser-button" onClick={handleCreate} >Create User</button>
-                    <button className="manageuser-button1" onClick={handleEdit}>Edit</button>
+                    <button className="manageuser-button11" onClick={handleEdit}>Edit</button>
                     <button className="manageuser-button1">Delete</button>
                 </div>
                 <div className="tablediv">
@@ -300,7 +303,7 @@ function ManageUser(){
                     striped 
                     hover 
                     condensed
-                    pagination = {paginationFactory({sizePerPage:7})}
+                    pagination = {paginationFactory({sizePerPage:6})}
                     cellEdit = {cellEditFactory({
                         mode:"click",
                         blurToSave:true,

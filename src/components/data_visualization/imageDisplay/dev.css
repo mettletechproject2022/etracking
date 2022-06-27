@@ -1,15 +1,17 @@
 h1{
-    color: blue;
+    color:#250d62;
+    font-family: fantasy;
+    letter-spacing: 1px;
 }
 .sec1{
-    height: 25%;
+    height: 22%;
     width: 25%;
     position: relative;
-    padding: 12px;
+    padding: 5px;
     display: inline-flex;
     background-color:none;
     text-decoration: dotted;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     text-align: justify;
     border-radius: 5px;
     /* transform: translate(-50%,-50%); */

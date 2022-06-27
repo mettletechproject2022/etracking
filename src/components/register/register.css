@@ -60,8 +60,8 @@
     align-items:center;
     padding:20px;
    
-    background: #ff00cc; 
-    background: -webkit-linear-gradient(to right, #333399, #ff00cc); 
-    background: linear-gradient(to right, #333399, #ff00cc); 
+    background: #9CECFB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
   
   }

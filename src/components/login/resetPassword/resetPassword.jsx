@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
+import Sidebar from "../../sidebar/Sidebar";
 import "../login.css";
+import "../../sidebar/sidebar.css";
+import "../../../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
 export const ChangePassword = () => {
-
-const[PrePass,setPrePass]=useState('');
-const[PrePassError,setPrePassError]=useState('');
+  const [PrePass, setPrePass] = useState("");
+  const [PrePassError, setPrePassError] = useState("");
 
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -15,27 +17,26 @@ const[PrePassError,setPrePassError]=useState('');
   const [cpassword, setcPassword] = useState("");
   const [cpasswordError, setcPasswordError] = useState("");
 
-  const [Dis,setDis]=useState(true);
+  const [Dis, setDis] = useState(true);
 
-  const checkPrePass=(e)=>{
-    e.preventDefault();
-  
-  }
+  // const checkPrePass=(e)=>{
+  //   e.preventDefault();
 
-  const handlePrePass=(e)=>{
-    setPrePassError('');
-    setPrePass(e.target.value)
-    if(e.target.value==='raj'){
-        setDis(false)
-        setPassword(true)
- if(e.target.value!==""){
-    setPrePassError('')
- }else{
-    setPrePassError('Previous password required')
- }
+  // }
+
+  const handlePrePass = (e) => {
+    setPrePassError("");
+    setPrePass(e.target.value);
+    if (e.target.value === "raj") {
+      setDis(false);
+
+      if (e.target.value !== "") {
+        setPrePassError("");
+      } else {
+        setPrePassError("Previous password required");
+      }
     }
-  }
-
+  };
 
   const handlePasswordChange = (e) => {
     setPasswordError("");
@@ -80,66 +81,71 @@ const[PrePassError,setPrePassError]=useState('');
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    //check if password is empty
+    if (PrePass !== "" && passwordError == "" && cpasswordError == "") {
+      alert("Password Change Succesfully");
+      navigate("/");
+    }
   };
 
   return (
-    <div className="wrapper3">
-      {/* <h3>Mettle Tech</h3><br></br> */}
-      <img src={logo} className="logoo" alt="MettleTech--User/Admin" />
+    <div className="container-fluid7 p-0 d-flex flex-row">
+      <Sidebar />
+      <div className="wrapper3">
+        {/* <h3>Mettle Tech</h3><br></br> */}
+        <img src={logo} className="logoo" alt="MettleTech--User/Admin" />
 
-      <form
-        className="form-group form"
-        autoComplete="off"
-        onSubmit={handleFormSubmit}
-      >
-        <label>Previous Password</label>
-        <input
-          type="password"
-          className="form-control custom-input"
-          placeholder="Enter your previous password"
-          onChange={handlePrePass}
-          value={PrePass}
-        />
-        {PrePassError && <div className="error-msg">{PrePassError}</div>}
-
-        <br></br>
-
-        <label>New Password</label>
-        <input
-          type="password"
-          className="form-control custom-input"
-          placeholder="Enter your new password"
-          onChange={handlePasswordChange}
-          value={password}
-          disabled={Dis}
-        />
-        {passwordError && <div className="error-msg">{passwordError}</div>}
-
-        <br></br>
-
-        <label>Confirm Password</label>
-        <input
-          type="password"
-          className="form-control custom-input"
-          placeholder="Confirm your password"
-          onChange={handleCPasswordChange}
-          value={cpassword}
-          disabled={Dis}
-        />
-        {cpasswordError && <div className="error-msg">{cpasswordError}</div>}
-
-        <br></br>
-
-        <button
-          type="submit"
-          className="btn btn-info btn-lg"
-          style={{ width: 100 + "%" }}
+        <form
+          className="form-group form"
+          autoComplete="off"
+          onSubmit={handleFormSubmit}
         >
-          CHANGE PASSWORD
-        </button>
-      </form>
+          <label>Previous Password</label>
+          <input
+            type="password"
+            className="form-control custom-input"
+            placeholder="Enter your previous password"
+            onChange={handlePrePass}
+            value={PrePass}
+          />
+          {PrePassError && <div className="error-msg">{PrePassError}</div>}
+
+          <br></br>
+
+          <label>New Password</label>
+          <input
+            type="password"
+            className="form-control custom-input"
+            placeholder="Enter your new password"
+            onChange={handlePasswordChange}
+            value={password}
+            disabled={Dis}
+          />
+          {passwordError && <div className="error-msg">{passwordError}</div>}
+
+          <br></br>
+
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            className="form-control custom-input"
+            placeholder="Confirm your password"
+            onChange={handleCPasswordChange}
+            value={cpassword}
+            disabled={Dis}
+          />
+          {cpasswordError && <div className="error-msg">{cpasswordError}</div>}
+
+          <br></br>
+
+          <button
+            type="submit"
+            className="btn btn-info btn-lg"
+            style={{ width: 100 + "%" }}
+          >
+            CHANGE PASSWORD
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

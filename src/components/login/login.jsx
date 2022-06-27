@@ -21,6 +21,9 @@ export const Login = () => {
   
   };
 
+  const adminEmail= "raj@gmail.com";
+  const userEmail= "atanu@gmail.com";
+
   const handleEmailChange = (e) => {
     setSuccessMsg("");
     setEmailError("");
@@ -47,11 +50,21 @@ export const Login = () => {
         /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
       if (emailRegex.test(email)) {
         setEmailError("");
-        if (email === "raj@gmail.com") {
+        if (email === adminEmail) {
           setEmailError("");
           if (password === "raj") {
             setSuccessMsg("You are successfully logged in");
             navigate("/profile");
+            localStorage.setItem('email',adminEmail);
+          } else {
+            setPasswordError("password does not match with the email address");
+          }
+        }else if (email === userEmail) {
+          setEmailError("");
+          if (password === "atanu") {
+            setSuccessMsg("You are successfully logged in");
+            navigate("/profile");
+            localStorage.setItem('email',userEmail);
           } else {
             setPasswordError("password does not match with the email address");
           }
