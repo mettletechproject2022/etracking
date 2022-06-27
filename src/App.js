@@ -61,20 +61,6 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      {/* <BrowserRouter>
-        <Sidebar>
-          <Routes>
-            <Route path="/sidebar" element={<Sidebar />} />
-            <Route path="/dataVisualisation" element={<DataVisualisation />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/logout" element={<Logout />} />
-             <Route path="/manageusers" element={<ManageUser/>}/>
-            <Route path="/manageUser" element={<ManageUser />} />
-            <Route path="/notification" element={<Notification />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </Sidebar>
-      </BrowserRouter> */}
     </div>
   );
 }
