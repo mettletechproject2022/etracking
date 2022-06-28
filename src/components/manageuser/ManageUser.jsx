@@ -18,7 +18,7 @@ function ManageUser() {
     setData(JSON.parse(localStorage.getItem("details")));
   }, []);
   const getData = () => {
-    axios("https://mocki.io/v1/895325ea-bdc4-41a5-b41f-429153b04a0a").then(
+    axios("https://mocki.io/v1/a81d6c42-d7ce-4df0-9964-4e2fc6ba0fdb").then(
       (res) => {
         if (localStorage.getItem("details") === null)
           localStorage.setItem("details", JSON.stringify(res.data));
@@ -65,7 +65,7 @@ function ManageUser() {
     },
   };
   function imageFormatter(cell, row) {
-    return <img style={{ width: 80 }} src={cell} alt={"identity"} />;
+    return <img className="photo1" src={cell} alt={"identity"} />;
   }
   const columns = [
     {
@@ -137,6 +137,7 @@ function ManageUser() {
       text: "Phone No.",
       editable: true,
       align: "center",
+      style: { "min-width": "130px" },
       headerAlign: "center",
       validator: (newValue, row, column) => {
         newValue = newValue.trim();
@@ -148,7 +149,7 @@ function ManageUser() {
         } else if (isNaN(newValue)) {
           return {
             valid: false,
-            message: "Please enter Numbaric value",
+            message: "Please enter Digits only",
           };
         } else if (newValue.length < 10 || newValue.length > 10) {
           return {
