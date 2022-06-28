@@ -91,7 +91,7 @@ const Sidebar = ({ children }) => {
     {
       path: "/logout",
       name: "Logout",
-      icon: <FaMinusCircle />,
+      icon: <FaMinusCircle  />,
     },
   ];
   return (
