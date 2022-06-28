@@ -62,3 +62,17 @@
   background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
   
   }
+  .col-sm-6{
+    background-color: rgba(247, 247, 240, 0.84);
+    color: black;
+  }
+  .registerform .form-control{
+    background-color: rgb(248, 248, 236);
+    color: black;
+  }
+  #dropdown1{
+    background-color: rgb(241, 241, 214);
+  }
+  #dropdown2{
+    background-color: rgb(241, 241, 214);
+  }
