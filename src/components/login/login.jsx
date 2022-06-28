@@ -4,6 +4,8 @@ import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
+import jsonData from "../../yo.json";
+
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -15,14 +17,21 @@ export const Login = () => {
 
   const popUpWindow = () => {
     let params = `width=600,height=600,left=100,top=100,scrollbars=yes`;
-    console.log("popUpWindow")
-
-  window.open("/popupbutt", "test", params);
-  
+    window.open("/popupbutt", "test", params);
   };
 
-  const adminEmail= "raj@gmail.com";
-  const userEmail= "atanu@gmail.com";
+  const emailChecker = (email) => {
+    const data = jsonData.find((item) => item.email === email);
+    const localData = JSON.parse(localStorage.getItem("data"));
+
+    if (data === undefined) return false;
+    else if (localData && JSON.parse(localData.email === email))
+      return localData;
+    else {
+      localStorage.setItem("data", JSON.stringify(data));
+      return data;
+    }
+  };
 
   const handleEmailChange = (e) => {
     setSuccessMsg("");
@@ -35,55 +44,26 @@ export const Login = () => {
     setPassword(e.target.value);
   };
   const navigate = useNavigate();
-  // const handleLogin=()=>{
-  //   console.log('login clicked')
-  //   navigate('/home')
-  //  }
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    //check if email is empty
     if (email !== "") {
-      //check some other condition
       const emailRegex =
         /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
       if (emailRegex.test(email)) {
         setEmailError("");
-        if (email === adminEmail) {
+        if (emailChecker(email)) {
           setEmailError("");
-          if (password === "raj") {
+          if (JSON.parse(localStorage.getItem("data")).password === password) {
             setSuccessMsg("You are successfully logged in");
             navigate("/profile");
-            localStorage.setItem('email',adminEmail);
-          } else {
+          } else
             setPasswordError("password does not match with the email address");
-          }
-        }else if (email === userEmail) {
-          setEmailError("");
-          if (password === "atanu") {
-            setSuccessMsg("You are successfully logged in");
-            navigate("/profile");
-            localStorage.setItem('email',userEmail);
-          } else {
-            setPasswordError("password does not match with the email address");
-          }
-        } else {
-          setEmailError("email does not match with our database");
-        }
-      } else {
-        setEmailError("Invalid Email");
-      }
-    } else {
-      setEmailError("Email Required");
-    }
+        } else setEmailError("email does not match with our database");
+      } else setEmailError("Invalid Email");
+    } else setEmailError("Email Required");
 
-    //check if password is empty
-    if (password !== "") {
-      //do something here
-    } else {
-      setPasswordError("Passsword Required");
-    }
+    if (password == "") setPasswordError("Passsword Required");
   };
 
   return (
@@ -146,7 +126,7 @@ export const Login = () => {
         </div>
 
         <div>
-          <a className="forgot pointer" onClick={() => popUpWindow()} >
+          <a className="forgot pointer" onClick={() => popUpWindow()}>
             Forgot Password?
           </a>
         </div>

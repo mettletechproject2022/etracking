@@ -51,7 +51,7 @@ function App() {
           <Route path="/history" element={<History />} />
           <Route path="/logout" element={<Logout />} />
 
-          {localStorage.getItem("email") === adminEmail ? (
+          {localStorage.getItem("data")&&JSON.parse(localStorage.getItem("data")).usertype==="Admin" ? (
             <Route path="/manageUser" element={<ManageUser />} />
           ) : (
             <Route path='/manageUser' element={<Unauth/>}/>
