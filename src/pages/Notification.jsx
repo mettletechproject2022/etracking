@@ -56,7 +56,7 @@ const Notification = () => {
       <Sidebar />
       <div className="notification">
         <div className="head-notification">
-          <h1>Notification</h1>
+          <h1>NOTIFICATION</h1>
         </div>
         <div className="notify">
           <BootstrapTable

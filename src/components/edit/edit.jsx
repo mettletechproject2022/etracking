@@ -1,23 +1,53 @@
 import "./edit.css";
-//import TextBox from 'react-native-password-eye'; 
+//import TextBox from 'react-native-password-eye';
 
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Edit() {
+  const selected = JSON.parse(localStorage.getItem("selected"));
+  const details = JSON.parse(localStorage.getItem("details"));
+  const dataX = details.filter((item) => item.id === selected);
+
+  const defaultData = {
+    id: dataX[0].id,
+    name: dataX[0].name,
+    age: dataX[0].age,
+    email: dataX[0].email,
+    phone: dataX[0].phone,
+    gender: dataX[0].gender,
+    designation: dataX[0].designation,
+    usertype: dataX[0].usertype,
+    communicationaddress: dataX[0].communicationaddress,
+    permanentaddress: dataX[0].permanentaddress,
+    dob: dataX[0].dob,
+    senior: dataX[0].senior,
+    salary: dataX[0].salary,
+    photo: dataX[0].photo,
+  };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
     trigger,
-  } = useForm();
+  } = useForm({ defaultValues: defaultData });
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
+
+    //problem in the below line 44 ---> editing after deleting not working properly
+    details[selected - 1] = data;
+
+    localStorage.setItem("details", JSON.stringify(details));
+    console.log(details);
+
+    navigate("/manageuser");
     reset();
   };
-
 
   const [gender, setGender] = useState();
 
@@ -29,10 +59,12 @@ function Edit() {
     <div className="container1 pt-5">
       <div className="row justify-content-sm-center pt-5">
         <div className="col-sm-6 shadow round pb-3">
-          <h1 className="text-center pt-3 text-secondary">Edit</h1>
+          <h1 className="text-center pt-3 text-secondary">EDIT USER</h1>
           <form className="registerform" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
-              <label className="col-form-label"><b>Full Name:</b></label>
+              <label className="col-form-label">
+                <b>Full Name:</b>
+              </label>
               <input
                 type="text"
                 className={`form-control ${errors.name && "invalid"}`}
@@ -46,7 +78,9 @@ function Edit() {
               )}
             </div>
             <div className="form-group">
-              <label className="col-form-label"><b>Age:</b></label>
+              <label className="col-form-label">
+                <b>Age:</b>
+              </label>
               <input
                 type="text"
                 className={`form-control ${errors.age && "invalid"}`}
@@ -63,7 +97,7 @@ function Edit() {
                   pattern: {
                     value: /^[0-9]*$/,
                     message: "Only numbers are allowed",
-                  }
+                  },
                 })}
                 onKeyUp={() => {
                   trigger("age");
@@ -74,7 +108,9 @@ function Edit() {
               )}
             </div>
             <div className="form-group">
-              <label className="col-form-label"><b>Email:</b></label>
+              <label className="col-form-label">
+                <b>Email:</b>
+              </label>
               <input
                 type="text"
                 className={`form-control ${errors.email && "invalid"}`}
@@ -83,7 +119,7 @@ function Edit() {
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     message: "Invalid email address",
-                  }
+                  },
                 })}
                 onKeyUp={() => {
                   trigger("email");
@@ -94,20 +130,23 @@ function Edit() {
               )}
             </div>
             <div className="form-group">
-              <label className="col-form-label"><b>Phone:</b></label>
+              <label className="col-form-label">
+                <b>Phone:</b>
+              </label>
               <input
                 type="text"
                 className={`form-control ${errors.phone && "invalid"}`}
                 {...register("phone", {
                   required: "Phone Number is Required",
                   pattern: {
-                    value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
+                    value:
+                      /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
                     message: "Invalid phone no",
                   },
                   maxLength: {
                     value: 10,
                     message: "Maximum allowed length is 10",
-                  }
+                  },
                 })}
                 onKeyUp={() => {
                   trigger("phone");
@@ -118,10 +157,12 @@ function Edit() {
               )}
             </div>
             <div className="form-group">
-              <label className="col-form-label"><b>Communication Address:</b></label>
+              <label className="col-form-label">
+                <b>Communication Address:</b>
+              </label>
               <textarea
                 className={`form-control ${errors.message && "invalid"}`}
-                {...register("message", {
+                {...register("communicationaddress", {
                   required: "address is Required",
                   minLength: {
                     value: 10,
@@ -130,7 +171,7 @@ function Edit() {
                   maxLength: {
                     value: 50,
                     message: "Maximum allowed length is 50 ",
-                  }
+                  },
                 })}
                 onKeyUp={() => {
                   trigger("message");
@@ -142,10 +183,12 @@ function Edit() {
             </div>
 
             <div className="form-group">
-              <label className="col-form-label"><b>Permanent Address:</b></label>
+              <label className="col-form-label">
+                <b>Permanent Address:</b>
+              </label>
               <textarea
                 className={`form-control ${errors.message && "invalid"}`}
-                {...register("messages", {
+                {...register("permanentaddress", {
                   required: "address is Required",
                   minLength: {
                     value: 10,
@@ -154,7 +197,7 @@ function Edit() {
                   maxLength: {
                     value: 50,
                     message: "Maximum allowed length is 50 ",
-                  }
+                  },
                 })}
                 onKeyUp={() => {
                   trigger("messages");
@@ -163,8 +206,8 @@ function Edit() {
               {errors.message && (
                 <small className="text-danger">{errors.message.message}</small>
               )}
-            </div><br />
-
+            </div>
+            <br />
 
             {/* <div className="form-group">
               <label className="col-form-label"><b>Gender:</b></label>
@@ -173,36 +216,68 @@ function Edit() {
               <p> <input type="radio"/> Others</p>
               </div> */}
             <div>
-              <label className="col-form-label"><b>Gender:</b></label><br />
-              <input type="radio" name="gender" value="Male" onChange={e => setGender(e.target.value)} />Male <br />
-              <input type="radio" name="gender" value="Female" onChange={e => setGender(e.target.value)} />Female<br />
-              <input type="radio" name="gender" value="others" onChange={e => setGender(e.target.value)} />Others<br />
-
+              <label className="col-form-label">
+                <b>Gender:</b>
+              </label>
+              <br />
+              <input
+                type="radio"
+                name="gender"
+                value="Male"
+                onChange={(e) => setGender(e.target.value)}
+              />
+              Male <br />
+              <input
+                type="radio"
+                name="gender"
+                value="Female"
+                onChange={(e) => setGender(e.target.value)}
+              />
+              Female
+              <br />
+              <input
+                type="radio"
+                name="gender"
+                value="others"
+                onChange={(e) => setGender(e.target.value)}
+              />
+              Others
+              <br />
             </div>
 
-
             <div>
-              <label className="col-form-label"><b>Designation:</b><br /><br />
-                <p><input type="checkbox" /> Frontend Developer </p>
-                <p><input type="checkbox" /> Backend Developer</p>
-                <p><input type="checkbox" /> Database manager</p></label>
-
+              <label className="col-form-label">
+                <b>Designation:</b>
+                <br />
+                <br />
+                <p>
+                  <input type="checkbox" /> Frontend Developer
+                </p>
+                <p>
+                  <input type="checkbox" /> Backend Developer
+                </p>
+                <p>
+                  <input type="checkbox" /> Database manager
+                </p>
+              </label>
             </div>
 
-
             <div>
-              <label className="col-form-label"><b>User Type:</b></label>
+              <label className="col-form-label">
+                <b>User Type:</b>
+              </label>
               <select id="dropdown1">
-
                 <option value="1">choose option</option>
                 <option value="2">User</option>
                 <option value="3">Admin</option>
               </select>
-            </div><br/>
-
+            </div>
+            <br />
 
             <div>
-              <label className="col-form-label"><b>Directory:</b></label>
+              <label className="col-form-label">
+                <b>Directory:</b>
+              </label>
               <select id="dropdown2">
                 <option value="1">choose option</option>
                 <option value="2">c:/mettletech/developer/</option>
@@ -214,8 +289,8 @@ function Edit() {
                 <option value="8">c:/mettletech/developer/20222006</option>
                 <option value="8">c:/mettletech/developer/20222007</option>
               </select>
-            </div><br/>
-
+            </div>
+            <br />
 
             <div className="register">
               <input

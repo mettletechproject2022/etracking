@@ -56,7 +56,7 @@ const History = () => {
       <Sidebar />
       <div className="notification">
         <div className="head-notification">
-          <h1>History</h1>
+          <h1>HISTORY</h1>
         </div>
         <div className="notify">
           <BootstrapTable

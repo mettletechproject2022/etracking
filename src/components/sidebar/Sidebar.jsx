@@ -6,8 +6,29 @@ import { NavLink } from "react-router-dom";
 // import './sidebar.css'
 
 const Sidebar = ({ children }) => {
+
+
+
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
+  const sideList=(x)=>{
+    return x.map((item, index) => (
+      <NavLink
+        to={item.path}
+        key={index}
+        className="link"
+        activeclassName="active"
+      >
+        <div className="icon">{item.icon}</div>
+        <div
+          style={{ display: isOpen ? "block" : "none" }}
+          className="link_text"
+        >
+          {item.name}
+        </div>
+      </NavLink>
+    ))}
 
   const menuItem = [
     {
@@ -38,6 +59,36 @@ const Sidebar = ({ children }) => {
     },
 
     {
+      path: "/",
+      name: "Logout",
+      icon: <FaMinusCircle />,
+    },
+  ];
+  const menuItem2 = [
+    {
+      path: "/profile",
+      name: "Profile",
+      icon: <FaRegUserCircle />,
+    },
+    {
+      path: "/dataVisualisation",
+      name: "DataVisualisation",
+      icon: <IoIosAlbums />,
+    },
+
+    {
+      path: "/notification",
+      name: "Notification",
+      icon: <IoIosNotifications />,
+    },
+    {
+      path: "/history",
+      name: "History",
+      icon: <IoNewspaperOutline />,
+    },
+   
+
+    {
       path: "/logout",
       name: "Logout",
       icon: <FaMinusCircle />,
@@ -53,24 +104,11 @@ const Sidebar = ({ children }) => {
           <FaBars onClick={toggle} />
         </div>
       </div>
-      {menuItem.map((item, index) => (
-        <NavLink
-          to={item.path}
-          key={index}
-          className="link"
-          activeclassName="active"
-        >
-          <div className="icon">{item.icon}</div>
-          <div
-            style={{ display: isOpen ? "block" : "none" }}
-            className="link_text"
-          >
-            {item.name}
-          </div>
-        </NavLink>
-      ))}
+      <div>
+      {(localStorage.getItem("data"))&&JSON.parse(localStorage.getItem("data")).usertype==="Admin"? sideList(menuItem)  : sideList(menuItem2)}
     </div>
-  );
+    </div>
+  )
 };
 
 export default Sidebar;

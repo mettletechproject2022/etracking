@@ -8,6 +8,7 @@
 
   form.registerform {
     text-align: left;
+    padding: 10px;
   }
 
   .text-secondary {
@@ -17,7 +18,7 @@
     margin-bottom: 10px;
     padding-bottom: 15px;
     letter-spacing: 1px;
-  }
+}
 
   #dropdown1 {
     margin-left: 10px;
@@ -25,22 +26,31 @@
     padding-right: 70px;
     text-align: center;
     border-radius: 5px;
-  }
+    background-color: #406176ba;
+    
+}
 
   #dropdown2 {
     text-align: center;
     margin-left: 12px;
     border-radius: 5px;
-  }
+    background-color: #406176ba;
+    
+}
+  
 
   #password1 {
     margin-left: 5px;
     border-radius: 5px;
-  }
+    background-color: #406176ba;
+   
+}
+
 
   .shadow{
     box-shadow: 0 0.5rem 1rem !important;
    margin-bottom: 60px;
+   padding: 0;
   }  
 
   .register {
@@ -53,15 +63,53 @@
     font-family: serif;
   }
 
-  div.container1 {
+  div .container1 {
     overflow:hidden;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     padding:20px;
    
-    background: #ff00cc; 
-    background: -webkit-linear-gradient(to right, #333399, #ff00cc); 
-    background: linear-gradient(to right, #333399, #ff00cc); 
+    background: #9CECFB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
   
   }
+
+  .registerform .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #40617629;
+    background-clip: padding-box;
+    border: 2px solid #000305;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
+
+
+#root .container1 {
+background-image: url('https://wallpaperaccess.com/full/378757.png');
+background-repeat: round;
+}
+
+
+
+.shadow {
+  /* background-image: url('https://wallpaperaccess.com/full/378757.png');
+  background-repeat: round; */
+  background-color: #6f98e163;
+} 
+
+.text1 {
+  font-size: 20px;
+  color: #e9f0f6;
+}

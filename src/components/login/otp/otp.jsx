@@ -8,20 +8,22 @@ export const OTP = () => {
   const [Otp, setOtp] = useState("");
   const [OtpError, setOtpError] = useState("");
 
-  const [Mob, setMob] = useState("");
+  const [Mob, setMob] = useState(
+    JSON.parse(localStorage.getItem("data")).phone
+  );
   const [MobError, setMobError] = useState("");
-  const [otpSent,setotpSent]=useState(false);
+  const [otpSent, setotpSent] = useState(false);
 
-  const checkMob=(e)=>{
+  const checkMob = (e) => {
     e.preventDefault();
-    if(Mob==="8927592953"){
-      setDis(false)
-      setotpSent(true)
+
+    if (Mob !== "") {
+      setDis(false);
+      setotpSent(true);
     }
-  }
+  };
 
-  const[Dis,setDis]=useState(true);
-
+  const [Dis, setDis] = useState(true);
 
   const handleOtpChange = (e) => {
     setOtpError("");
@@ -41,10 +43,7 @@ export const OTP = () => {
   const handleMobChange = (e) => {
     setMobError("");
     setMob(e.target.value);
-    
   };
-
-
 
   const navigate = useNavigate();
   // const handleLogin=()=>{
@@ -54,13 +53,10 @@ export const OTP = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if(Mob!==''&& OtpError==''){
-      alert('Password change succesfully');
-          navigate('/')
+    if (Mob !== "" && OtpError == "") {
+      alert("redirecting you to resetpassword page..");
+      navigate("/changePass");
     }
-  
-
-   
   };
 
   return (
@@ -68,11 +64,7 @@ export const OTP = () => {
       {/* <h3>Mettle Tech</h3><br></br> */}
       <img src={logo2} className="logoo2" alt="MettleTech--User/Admin" />
 
-      <form
-        className="form-group form"
-        autoComplete="off"
-        
-      >
+      <form className="form-group form" autoComplete="off">
         <div>
           <h3 className="">Enter Your Mobile Number</h3>
         </div>
@@ -84,13 +76,17 @@ export const OTP = () => {
           value={Mob}
         />
         {MobError && <div className="error-msg">{MobError}</div>}
-        {otpSent && <div className="success-msg"><p>Otp Sent</p></div>}
+        {otpSent && (
+          <div className="success-msg">
+            <p>Otp Sent</p>
+          </div>
+        )}
 
         <button
           type="submit"
           className="btn btn-success btn-sm"
-          style={{ width: 50  +"%" }}
-          onClick={(e)=>checkMob(e)}
+          style={{ width: 50 + "%" }}
+          onClick={(e) => checkMob(e)}
         >
           SEND OTP
         </button>
@@ -117,7 +113,7 @@ export const OTP = () => {
           type="submit"
           className="btn btn-success btn-lg"
           style={{ width: 100 + "%" }}
-          onClick={(e)=>handleFormSubmit(e)}
+          onClick={(e) => handleFormSubmit(e)}
         >
           SUBMIT
         </button>
