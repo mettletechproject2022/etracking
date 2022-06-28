@@ -5,12 +5,6 @@
 .notification{
     width: 100%;
 }
-<<<<<<<< HEAD
-.head-notification{
-    margin-top: 5px;
-    width: 100%;
-    background-color: rgb(245, 245, 245);
-=======
 .head-notification {
   margin: 20px;
   width: 100%;
@@ -25,7 +19,6 @@
   margin-left:  10px;
   margin-right: 10px;
   padding-top: 60px;
->>>>>>> 6f9bfeaddbdc3414918e6c6ec632c4f8d51ba118
 }
 .head-notification h1{
     color: black}
