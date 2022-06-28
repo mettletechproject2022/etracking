@@ -89,7 +89,10 @@ font-size: 30px;
     overflow-x: hidden;
 	overflow-y: visible;
 }
-
+.photo1{
+    height: 100px;
+  width: 80px;
+}
 
 
 
