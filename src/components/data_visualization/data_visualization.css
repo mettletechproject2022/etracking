@@ -67,14 +67,14 @@
 
 
 .con h1{
-    color: greenyellow;
+    color: #250d62;
 }
 
 .sec {
     height: 45%;
     width: 25%;
     position: relative;
-    padding: 10px;
+    padding: 0px;
     display: inline-block;
     background-color: none;
     text-decoration: dotted;
@@ -87,22 +87,22 @@
 
 .sec a{
     position: absolute;
-    color: aqua;
-    background: crimson;
+    color: rgb(17, 25, 25);
+    background: rgb(224, 206, 209);
     text-decoration: none;
     text-align: center;
-    margin-left: 15%;
-    font-size: 20px;
+    margin-left: 5%;
+    font-size: 15px;
     cursor: pointer;
     font-weight: 500;
     padding: 5px;
     border-radius: 6px;
-    border: 2px solid crimson;
-    transition: all 0.3s ease;
+    border: 2px solid rgb(26, 22, 23);
+    transition: all 0.5s ease;
 }
 .sec a:hover {
-    color: crimson;
-    background: steelblue;
+    color: rgb(9, 9, 9);
+    background: rgb(244, 226, 135);
 }
 
 .con h1 {
