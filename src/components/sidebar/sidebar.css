@@ -41,7 +41,7 @@
   
   }
   .link:hover {
-    background: lightskyblue;
+    background: rgb(150, 241, 219);
     color: black;
     transition: all 0.5s;
   }
