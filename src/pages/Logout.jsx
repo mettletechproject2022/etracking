@@ -17,14 +17,14 @@ const Logout = () => {
   return (
     <div className="container-fluid3 p-0 d-flex flex-row">
       <Sidebar />
-      <div>
+      <div className="logoutPosition">
         {/* <button type="button" class="btn btn-outline-danger" onClick={() => handleLogout()}> */}
-      <div className="LogoutButton">
-        <button id="LogoutButton" type="button" onClick={() => handleLogout()}>
-          Logout
-        </button>
+        <div className="LogoutButton">
+          <button id="LogoutButton" type="button" onClick={() => handleLogout()}>
+            Logout
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

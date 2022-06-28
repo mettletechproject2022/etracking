@@ -18,3 +18,9 @@ margin-top: 5%;
 background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg');
 background-repeat: round;
 }
+
+
+.logoutPosition {
+    width: 100%;
+    padding-top: 100px;
+}
