@@ -338,7 +338,7 @@ function ManageUser() {
             striped
             hover
             condensed
-            pagination={paginationFactory({ sizePerPage: 6 })}
+            pagination={paginationFactory({ sizePerPage: 6, hideSizePerPage:true })}
             cellEdit={cellEditFactory({
               mode: "click",
               blurToSave: true,
