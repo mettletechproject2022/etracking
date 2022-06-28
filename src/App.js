@@ -9,6 +9,7 @@ import Register from "./components/register/register";
 import Edit from "./components/edit/edit";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ManageUser from "./components/manageuser/ManageUser";
+import DvUser from "./components/data_visualization/imageDisplay/user";
 import Dev2 from "./components/data_visualization/imageDisplay/dev2";
 import DataVisualisation from "../src/pages/DataVisualisation";
 import Dev1 from "./components/data_visualization/imageDisplay/dev1";
@@ -45,7 +46,7 @@ function App() {
           <Route path="/dev2" element={<Dev2/>}/>
           <Route path="/register" element={<Register />} />
           <Route path="/edit" element={<Edit />} />
-          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+          <Route path="/dvUser" element={<DvUser />} />
           <Route path="/dataVisualisation" element={<DataVisualisation />} />
           <Route path="/history" element={<History />} />
           <Route path="/logout" element={<Logout />} />
