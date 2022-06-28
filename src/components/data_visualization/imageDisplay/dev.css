@@ -1,5 +1,5 @@
 .con h1{
-    color:yellowgreen;
+    color:#250d62;
     font-family: fantasy;
     letter-spacing: 1px;
 }
@@ -16,28 +16,28 @@
     border-radius: 5px;
     /* transform: translate(-50%,-50%); */
 }
-.mojii{
-    height: 100%;
-    width: 100%;
+.moji{
+    height: 40%;
+    width: 40%;
     padding: 1px;
 }
 .sec1 a{
     color: aqua;
-    background: crimson;
+    background: rgb(238, 205, 212);
     text-decoration: none;
     text-align: center;
     font-size: 20px;
     font-weight: 500;
-    padding: 10px 30px;
+    padding: 5px 0px;
     margin-top: 20px;
     margin-left: 10px;
     border-radius: 6px;
-    border: 2px solid crimson;
+    border: 2px solid rgb(3, 2, 2);
     transition: all 0.3s ease;
 }
 .sec1 a:hover {
-    color: crimson;
-    background: steelblue;
+    color: rgb(147, 121, 126);
+    background: rgb(192, 213, 230);
     opacity: 0.8s;
 }
 .overlay{

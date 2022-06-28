@@ -10,7 +10,7 @@ const DataVisualisation = () => {
     <div className="container-fluid8 p-0 d-flex flex-row">
       <Sidebar/>
     <div className="con">
-      <h1>DATA VISUALISATION</h1>
+      <h1 >DATA VISUALISATION</h1>
       <div className="sec">
           <img src={file} className='moji' alt="images" /><br />
           <a href="dev1"> Developer 1 </a>
