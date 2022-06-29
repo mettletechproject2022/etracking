@@ -1,10 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import "./dev.css";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import "../../sidebar/sidebar.css";
 import "../../../App.css";
 
+
 const Dev2 = () => {
+  const history = useNavigate()
   return (
+    <>
+    <button onClick={()=> history(-1)}>Go Back</button>
     <div className="container-fluid9 p-0 d-flex flex-row">
     <Sidebar/>
     <div className="con">
@@ -46,7 +51,13 @@ const Dev2 = () => {
           </div>
       </div>
     </div>
+    <div>
+      {/* <div className="back">
+      <BsFillArrowLeftCircleFill />
+      </div> */}
     </div>
+    </div>
+    </>
   );
 };
 export default Dev2;

@@ -1,9 +1,27 @@
 import React, { useState } from "react";
-import { FaTh, FaBars, FaRegUserCircle, FaMinusCircle } from "react-icons/fa";
+import { FaBars, FaRegUserCircle, FaMinusCircle } from "react-icons/fa";
 import { IoIosNotifications, IoIosPeople, IoIosAlbums } from "react-icons/io";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 // import './sidebar.css'
+
+// import {Component} from 'react';
+// class Sidebar extends Component{
+//   constructor(props){
+//     super(props);
+//     this.handleBack=this.handleLogin.bind(this)
+//   }
+//   handleBack(){
+//     this.props.history.goBack()
+//   }
+//   render(){
+//     return(
+//       <div>
+//         <button onClick={this.handleBack}>Back</button>
+//       </div>
+//     )
+//   }
+// }
 
 const Sidebar = ({ children }) => {
 
