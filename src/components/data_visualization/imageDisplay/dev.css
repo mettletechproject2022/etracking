@@ -3,19 +3,44 @@
     font-family: fantasy;
     letter-spacing: 1px;
 }
-.sec1{
-    height: 22%;
-    width: 25%;
+
+.con {
+    width: 96%;
+}
+
+
+.sec1 {
+    height: 3%;
+    width: 33%;
     position: relative;
-    padding: 10px;
+    padding: 20px;
     display: inline-flex;
-    background-color:none;
+    background-color: none;
     text-decoration: dotted;
     /* padding-left: 20px; */
     text-align: justify;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     /* transform: translate(-50%,-50%); */
+    background-color: #797979;
 }
+
+
+.sec1 {
+    height: 2%;
+    width: 14%;
+    position: relative;
+    padding: 20px;
+    display: inline-flex;
+    background-color: none;
+    text-decoration: dotted;
+    /* padding-left: 20px; */
+    text-align: justify;
+    /* border-radius: 5px; */
+    /* transform: translate(-50%,-50%); */
+    background-color: #797979;
+}
+
+
 .moji{
     height: 40%;
     width: 40%;
