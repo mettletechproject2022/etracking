@@ -75,11 +75,9 @@
 }
 
 .butt {
-    background-color: #ff2606;
+    background-color: #000000;
     width: 60px;
-    font-size: 15px;
+    font-size: 18px;
     color: white;
-    font-family: math;
-    font-weight: 500;
     border: none;
 }
