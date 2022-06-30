@@ -10,6 +10,7 @@ const DataVisualisation = () => {
     <div className="container-fluid8 p-0 d-flex flex-row">
       <Sidebar/>
     <div className="con">
+        <input type="text"placeholder="Search.."className="search"/>
       <h1>DATA VISUALISATION</h1>
       <div className="sec">
           <img src={file} className='moji' alt="images" /><br />

@@ -14,6 +14,7 @@ import Dev2 from "./components/data_visualization/imageDisplay/dev2";
 import DataVisualisation from "../src/pages/DataVisualisation";
 import Dev1 from "./components/data_visualization/imageDisplay/dev1";
 import Unauth from "../src/pages/unauth";
+import Datetime from "./pages/Datetime";
 
 // for sidebar
 // import Sidebar from "./components/sidebar/Sidebar";
@@ -27,8 +28,8 @@ import Logout from "./pages/Logout";
 import "./App.css";
 
 function App() {
-  const adminEmail= "raj@gmail.com";
-  const userEmail= "atanu@gmail.com";
+  const adminEmail = "raj@gmail.com";
+  const userEmail = "atanu@gmail.com";
 
   return (
     <div>
@@ -43,7 +44,7 @@ function App() {
           <Route path="/popupbutt" element={<Popupbutt />} />
           {/* <Route path="/data_visualization" element={<Data_visualization />} /> */}
           <Route path="/dev1" element={<Dev1 />} />
-          <Route path="/dev2" element={<Dev2/>}/>
+          <Route path="/dev2" element={<Dev2 />} />
           <Route path="/register" element={<Register />} />
           <Route path="/edit" element={<Edit />} />
           <Route path="/dvUser" element={<DvUser />} />
@@ -51,17 +52,17 @@ function App() {
           <Route path="/history" element={<History />} />
           <Route path="/logout" element={<Logout />} />
 
-          {localStorage.getItem("data")&&JSON.parse(localStorage.getItem("data")).usertype==="Admin" ? (
+          {localStorage.getItem("data") &&
+          JSON.parse(localStorage.getItem("data")).usertype === "Admin" ? (
             <Route path="/manageUser" element={<ManageUser />} />
           ) : (
-            <Route path='/manageUser' element={<Unauth/>}/>
+            <Route path="/manageUser" element={<Unauth />} />
           )}
 
           <Route path="/notification" element={<Notification />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
