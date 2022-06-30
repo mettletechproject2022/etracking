@@ -8,7 +8,7 @@ import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 
 
-const Dev2 = () => {
+const Dev4 = () => {
   const [modal, setmodal] = useState(false)
 
   // const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Dev2 = () => {
 
   const success = () => {
     alert('Message sent successfully')
-    // navigate("/dev2");
+    // navigate("/dev4");
   };
 
   return (
@@ -29,10 +29,10 @@ const Dev2 = () => {
       <div className="con">
         <h1>Developer 2</h1>
         <div className="sec1">
-          <img src="images/dev2/1652163659947.png" className="mojii" alt="images" />
+          <img src="images/dev4/1652163659947.png" className="mojii" alt="images" />
           <div className="overlay">
             <div className="cont">
-              <a href="images/dev2/1652163659947.png" target="_blank">Zoom</a>
+              <a href="images/dev4/1652163659947.png" target="_blank">Zoom</a>
 
               {/* Pop-up Message code */}
               {/* <div> */}
@@ -81,28 +81,28 @@ const Dev2 = () => {
           </div>
         </div>
         <div className="sec1">
-          <img src="images/dev2/1652164143154.png" className="mojii" alt="images" />
+          <img src="images/dev4/1652164143154.png" className="mojii" alt="images" />
           <div className="overlay">
             <div className="cont">
-              <a href="images/dev2/1652164143154.png" target="_blank">Zoom</a>
+              <a href="images/dev4/1652164143154.png" target="_blank">Zoom</a>
               <a href="#" className="button" onClick={() => setmodal(true)}>Comments</a>
             </div>
           </div>
         </div>
         <div className="sec1">
-          <img src="images/dev2/1652164745232.png" className="mojii" alt="images" />
+          <img src="images/dev4/1652164745232.png" className="mojii" alt="images" />
           <div className="overlay">
             <div className="cont">
-              <a href="images/dev2/1652164745232.png" target="_blank">Zoom</a>
+              <a href="images/dev4/1652164745232.png" target="_blank">Zoom</a>
               <a href="#" className="button" onClick={() => setmodal(true)}>Comments</a>
             </div>
           </div>
         </div>
         <div className="sec1">
-          <img src="images/dev2/1652165348396.png" className="mojii" alt="images" />
+          <img src="images/dev4/1652165348396.png" className="mojii" alt="images" />
           <div className="overlay">
             <div className="cont">
-              <a href="images/dev2/1652165348396.png" target="_blank">Zoom</a>
+              <a href="images/dev4/1652165348396.png" target="_blank">Zoom</a>
               <a href="#" className="button" onClick={() => setmodal(true)}>Comments</a>
             </div>
           </div>
@@ -112,4 +112,4 @@ const Dev2 = () => {
     </>
   );
 };
-export default Dev2;
+export default Dev4;
