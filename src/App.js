@@ -11,6 +11,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ManageUser from "./components/manageuser/ManageUser";
 import DvUser from "./components/data_visualization/imageDisplay/user";
 import Dev2 from "./components/data_visualization/imageDisplay/dev2";
+import Dev3 from "./components/data_visualization/imageDisplay/dev3";
+import Dev4 from "./components/data_visualization/imageDisplay/dev4";
 import DataVisualisation from "../src/pages/DataVisualisation";
 import Dev1 from "./components/data_visualization/imageDisplay/dev1";
 import Unauth from "../src/pages/unauth";
@@ -45,6 +47,8 @@ function App() {
           {/* <Route path="/data_visualization" element={<Data_visualization />} /> */}
           <Route path="/dev1" element={<Dev1 />} />
           <Route path="/dev2" element={<Dev2 />} />
+          <Route path="/dev3" element={<Dev3 />} />
+          <Route path="/dev4" element={<Dev4 />} />
           <Route path="/register" element={<Register />} />
           <Route path="/edit" element={<Edit />} />
           <Route path="/dvUser" element={<DvUser />} />

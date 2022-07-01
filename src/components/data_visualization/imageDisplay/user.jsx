@@ -20,11 +20,11 @@ const DvUser = () => {
         </div>
         <div className="sec2">
         <img src={file} className='moji' alt="images" /><br />
-            <a href="#"> 25-06-2022 </a>
+            <a href="dev3"> 25-06-2022 </a>
         </div>
         <div className="sec2">
         <img src={file} className='moji' alt="images" /><br />
-            <a href="#"> 26-06-2022 </a>
+            <a href="dev4"> 26-06-2022 </a>
         </div>
         <div className="sec2">
         <img src={file} className='moji' alt="images" /><br />

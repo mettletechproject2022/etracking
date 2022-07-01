@@ -22,11 +22,11 @@ const DataVisualisation = () => {
       </div>
       <div className="sec">
       <img src={file} className='moji' alt="images" /><br />
-          <a href="#"> Developer 3 </a>
+          <a href="dev3"> Developer 3 </a>
       </div>
       <div className="sec">
       <img src={file} className='moji' alt="images" /><br />
-          <a href="#"> Developer 4 </a>
+          <a href="dev4"> Developer 4 </a>
       </div>
       <div className="sec">
       <img src={file} className='moji' alt="images" /><br />

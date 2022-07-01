@@ -27,7 +27,7 @@ const Dev3 = () => {
       <div className="container-fluid9 p-0 d-flex flex-row">
         <Sidebar />
         <div className="con">
-          <h1>Developer 2</h1>
+          <h1>Developer 3</h1>
           <div className="sec1">
             <img src="images/dev3/1652163659947.png" className="mojii" alt="images" />
             <div className="overlay">

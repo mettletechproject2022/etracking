@@ -5,13 +5,15 @@ import "../../../App.css";
 // import { Modal } from "bootstrap";
 import { Modal, ModalHeader,ModalBody,Row,Col} from "reactstrap";
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Dev4 = () => {
   const [modal, setmodal] = useState(false)
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const history = useNavigate()
 
 
   const success = () => {
@@ -27,7 +29,7 @@ const Dev4 = () => {
     <div className="container-fluid9 p-0 d-flex flex-row">
       <Sidebar />
       <div className="con">
-        <h1>Developer 2</h1>
+        <h1>Developer 4</h1>
         <div className="sec1">
           <img src="images/dev4/1652163659947.png" className="mojii" alt="images" />
           <div className="overlay">
