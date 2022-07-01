@@ -56,7 +56,7 @@ const Notification = () => {
 const columns = [
   { dataField: 'id', text: 'Id', sort: true },
   { dataField: 'name', text: 'Name', sort: true },
-  { dataField: 'animal', text: 'Animal', sort: true }
+  { dataField: 'Massages', text: 'Massages', sort: true }
 ];
 
 const defaultSorted = [{
