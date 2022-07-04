@@ -76,8 +76,6 @@ const NotificaionModal = (props) => {
       />
     </PureModal>
   );
-
 };
-
 
 export default NotificaionModal;
