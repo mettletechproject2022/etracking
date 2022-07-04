@@ -1,42 +1,20 @@
 import React, { useState } from "react";
-import { FaBars, FaRegUserCircle, FaMinusCircle } from "react-icons/fa";
-import { IoIosNotifications, IoIosPeople, IoIosAlbums } from "react-icons/io";
-import { IoNewspaperOutline } from "react-icons/io5";
+import { FaRegUserCircle, FaMinusCircle ,FaMeetup} from "react-icons/fa";
+import { IoIosPeople, IoIosAlbums } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-// import './sidebar.css'
 
-// import {Component} from 'react';
-// class Sidebar extends Component{
-//   constructor(props){
-//     super(props);
-//     this.handleBack=this.handleLogin.bind(this)
-//   }
-//   handleBack(){
-//     this.props.history.goBack()
-//   }
-//   render(){
-//     return(
-//       <div>
-//         <button onClick={this.handleBack}>Back</button>
-//       </div>
-//     )
-//   }
-// }
 
 const Sidebar = ({ children }) => {
-
-
-
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  const sideList=(x)=>{
+  const sideList = (x) => {
     return x.map((item, index) => (
       <NavLink
         to={item.path}
         key={index}
         className="link"
-        activeclassName="active"
+        activeclassname="active"
       >
         <div className="icon">{item.icon}</div>
         <div
@@ -46,7 +24,8 @@ const Sidebar = ({ children }) => {
           {item.name}
         </div>
       </NavLink>
-    ))}
+    ));
+  };
 
   const menuItem = [
     {
@@ -60,24 +39,15 @@ const Sidebar = ({ children }) => {
       icon: <IoIosAlbums />,
     },
 
+    
     {
-      path: "/notification",
-      name: "Notification",
-      icon: <IoIosNotifications />,
-    },
-    {
-      path: "/history",
-      name: "History",
-      icon: <IoNewspaperOutline />,
-    },
-    {
-      path: "/user",
-      name: "User",
+      path: "/manageUser",
+      name: "ManageUser",
       icon: <IoIosPeople />,
     },
 
     {
-      path: "/",
+      path: "/logout",
       name: "Logout",
       icon: <FaMinusCircle />,
     },
@@ -94,39 +64,29 @@ const Sidebar = ({ children }) => {
       icon: <IoIosAlbums />,
     },
 
-    {
-      path: "/notification",
-      name: "Notification",
-      icon: <IoIosNotifications />,
-    },
-    {
-      path: "/history",
-      name: "History",
-      icon: <IoNewspaperOutline />,
-    },
-   
 
     {
-      path: "/",
+      path: "/logout",
       name: "Logout",
-      icon: <FaMinusCircle  />,
+      icon: <FaMinusCircle />,
     },
   ];
   return (
-    <div style={{ width: isOpen ? "300px" : "60px" }} className="sidebar">
+    <div style={{ width: isOpen ? "190px" : "60px" }} className="sidebar">
       <div className="top_section">
-        <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-          Mettle Tech
-        </h1>
-        <div style={{ marginLeft: isOpen ? "60px" : "0px" }} className="bars">
-          <FaBars onClick={toggle} />
+     
+        <div style={{ marginLeft: isOpen ? "60px" : "0px" }} className="p-0">
+          <FaMeetup size={"32"}/>
         </div>
       </div>
       <div>
-      {(localStorage.getItem("data"))&&JSON.parse(localStorage.getItem("data")).usertype==="Admin"? sideList(menuItem)  : sideList(menuItem2)}
+        {localStorage.getItem("userdetails") &&
+        JSON.parse(localStorage.getItem("userdetails")).userType === "Admin"
+          ? sideList(menuItem)
+          : sideList(menuItem2)}
+      </div>
     </div>
-    </div>
-  )
+  );
 };
 
 export default Sidebar;
