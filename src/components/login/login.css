@@ -37,7 +37,7 @@ div.wrapper2{
 }
 
 div.wrapper3{
-  width:100%;
+  width: 96% !important;
   height:100vh;
   overflow:hidden;
   display:flex;

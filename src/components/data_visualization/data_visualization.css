@@ -104,3 +104,11 @@
     width: 100%;
     padding: 1px;
 }
+
+.con{
+width: 96%!important;
+}
+
+.search {
+    width: auto!important;
+}

@@ -1,15 +1,22 @@
 import React from 'react'
+import "./Newuser.css";
+import { useNavigate } from "react-router-dom";
+import "../sidebar/sidebar.css";
+import { useState, useEffect } from "react";
 
 function List({ employees, handleEdit, handleDelete }) {
 
     const formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
         minimumFractionDigits: null
     });
 
     return (
+        
         <div className='contain-table'>
+             <h1>MANAGE USER</h1>
+             <div style={{ }}>
+                <button onClick={() => setIsAdding(true)} className='round-button'>ADD USER</button>
+            </div>
             <table className='striped-table'>
                 <thead>
                     <tr>

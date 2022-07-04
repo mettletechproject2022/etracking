@@ -71,8 +71,8 @@ const Sidebar = ({ children }) => {
       icon: <IoNewspaperOutline />,
     },
     {
-      path: "/manageUser",
-      name: "ManageUser",
+      path: "/user",
+      name: "User",
       icon: <IoIosPeople />,
     },
 
@@ -107,7 +107,7 @@ const Sidebar = ({ children }) => {
    
 
     {
-      path: "/logout",
+      path: "/",
       name: "Logout",
       icon: <FaMinusCircle  />,
     },

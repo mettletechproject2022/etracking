@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2';
+import "./Newuser.css";
 
 function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
 
@@ -126,4 +127,4 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
     );
 }
 
-export default Edit
+export default Edit;

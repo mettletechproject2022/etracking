@@ -1,12 +1,15 @@
 import React from 'react'
+import Sidebar from "../sidebar/Sidebar";
 
 function Header({ setIsAdding }) {
     return (
+
         <header>
-            <h1>Mettletech</h1>
-            <div style={{ marginTop: '30px', marginBottom: '18px' }}>
-                <button onClick={() => setIsAdding(true)} className='round-button'>Add Button</button>
-            </div>
+            <Sidebar/>
+            {/* <h1>Mettletech</h1> */}
+            {/* <div style={{ }}>
+                <button onClick={() => setIsAdding(true)} className='round-button'>ADD USER</button>
+            </div> */}
         </header>
     )
 }

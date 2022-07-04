@@ -11,7 +11,7 @@ import {
   Publish,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import "../user.css";
+import "../profile.css";
 
 export default function User() {
   const data = JSON.parse(localStorage.getItem("data"));
