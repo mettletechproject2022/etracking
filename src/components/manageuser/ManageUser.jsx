@@ -120,7 +120,7 @@ function ManageUser() {
         <div className="row">
           <Sidebar />
           <div className="col-11">
-            <div>
+            <div className="commonname">
               <h3>MANAGE USER</h3>
             </div>
             <div className="row my-3">

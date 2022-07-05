@@ -32,6 +32,12 @@ const Checking = () => {
     setImgSelected(link + i);
   };
 
+// if else statement is to be used to verify the selected dropdown.
+//
+
+
+
+
   const Checking = () => {
     axios
       .post(link + "/api/users/images", {
@@ -63,7 +69,7 @@ const Checking = () => {
     if (data.userType === "Admin") {
       return dev.map((d, i) => (
         <option key={i} value={d.email}>
-          {d.name}
+          {d.name} 
         </option>
       ))
     }
@@ -90,6 +96,9 @@ const Checking = () => {
       <div className="row">
         <Sidebar />
         <div className="col-11">
+        <div className="commonname">
+          <h3>DATA VISUALISATION</h3>
+        </div>
           <div className="row m-0 p-2 shadow1">
             <div className="col-2 p-0">
               <p className="m-0">Start Date</p>
