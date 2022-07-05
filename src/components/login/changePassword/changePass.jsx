@@ -16,7 +16,7 @@ export const ChangePassword = () => {
 
     if (e.target.value !== "") {
       const passwordRegex =
-        /^(?=.[0-9])(?=.[!@#$%^&])[a-zA-Z0-9!@#$%^&]{8,16}$/;
+        /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
       if (passwordRegex.test(e.target.value)) {
         setPasswordError("");
       } else {

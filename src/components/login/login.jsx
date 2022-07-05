@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const Login = () => {
+export const Login = (props) => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
@@ -32,22 +32,9 @@ export const Login = () => {
       if (res.status === 200 && res.data.token) {
         localStorage.setItem("token", res.data.token);
         setSuccessMsg("You are successfully logged in");
-        validate();
+        props.setisLoggedIn(true);
+        navigate("/profile");
       } else setSuccessMsg("Wrong Email or password or both");
-    };
-    const validate = () => {
-      axios
-        .post(
-          link + "/api/users/verification",
-          {},
-          {
-            headers: {
-              authorization: `Bearer ` + localStorage.getItem("token"),
-            },
-          }
-        )
-        .then((res) => localStorage.setItem("userdetails", JSON.stringify(res.data.user)))
-        .then(navigate("/profile"));
     };
   };
 
@@ -79,79 +66,81 @@ export const Login = () => {
     if (password == "") setPasswordError("Passsword Required");
   };
 
-  const login = () => {
+  const loginView = () => {
     return (
-      <div className="wrapper">
-        <img src={logo} className="logoo" alt="MettleTech--User/Admin" />
+      <div className="row ">
+        <div className="col-12 wrapper">
+          <img src={logo} className="logoo" alt="MettleTech--User/Admin" />
 
-        <form
-          className="form-group form"
-          autoComplete="off"
-          onSubmit={handleFormSubmit}
-        >
-          {successMsg && (
-            <>
-              <div className="success-msg">{successMsg}</div>
-              <br></br>
-            </>
-          )}
-
-          <div>
-            <label className="mr-auto">Email</label>
-          </div>
-          <i className="login-icon fas fa-user"></i>
-          <input
-            type="text"
-            className="form-control custom-input "
-            placeholder="Enter your email address"
-            onChange={handleEmailChange}
-            value={email}
-          />
-          {emailError && <div className="error-msg">{emailError}</div>}
-
-          <br></br>
-
-          <div>
-            <label>Password</label>
-          </div>
-          <input
-            type="password"
-            className="form-control custom-input"
-            placeholder="Enter your password"
-            onChange={handlePasswordChange}
-            value={password}
-          />
-          {passwordError && <div className="error-msg">{passwordError}</div>}
-
-          <br></br>
-
-          <div className="mb-3">
-            <div className="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                className="custom-control-input"
-                id="customCheck1"
-              />
-              <label className="custom-control-label" htmlFor="customCheck1">
-                Remember me
-              </label>
-            </div>
-          </div>
-
-          <div>
-            <a className="forgot pointer" onClick={() => popUpWindow()}>
-              Forgot Password?
-            </a>
-          </div>
-
-          <button
-            type="submit"
-            className="btn btn-secondary btn-lg"
-            style={{ width: 100 + "%" }}
+          <form
+            className="form-group form"
+            autoComplete="off"
+            onSubmit={handleFormSubmit}
           >
-            LOGIN
-          </button>
-        </form>
+            {successMsg && (
+              <>
+                <div className="success-msg">{successMsg}</div>
+                <br></br>
+              </>
+            )}
+
+            <div>
+              <label className="mr-auto">Email</label>
+            </div>
+            <i className="login-icon fas fa-user"></i>
+            <input
+              type="text"
+              className="form-control custom-input "
+              placeholder="Enter your email address"
+              onChange={handleEmailChange}
+              value={email}
+            />
+            {emailError && <div className="error-msg">{emailError}</div>}
+
+            <br></br>
+
+            <div>
+              <label>Password</label>
+            </div>
+            <input
+              type="password"
+              className="form-control custom-input"
+              placeholder="Enter your password"
+              onChange={handlePasswordChange}
+              value={password}
+            />
+            {passwordError && <div className="error-msg">{passwordError}</div>}
+
+            <br></br>
+
+            <div className="mb-3">
+              <div className="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  className="custom-control-input"
+                  id="customCheck1"
+                />
+                <label className="custom-control-label" htmlFor="customCheck1">
+                  Remember me
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <a className="forgot pointer" onClick={() => popUpWindow()}>
+                Forgot Password?
+              </a>
+            </div>
+
+            <button
+              type="submit"
+              className="btn btn-secondary btn-lg"
+              style={{ width: 100 + "%" }}
+            >
+              LOGIN
+            </button>
+          </form>
+        </div>
       </div>
     );
   };
@@ -159,13 +148,13 @@ export const Login = () => {
   const [view, setView] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("token") !== null) {
+    if (props.isLoggedIn) {
       setView(false);
       navigate("/profile");
     } else setView(true);
   }, []);
 
-  return <div>{view ? login() : <></>}</div>;
+  return <div>{view ? loginView() : <></>}</div>;
 };
 
 export default Login;

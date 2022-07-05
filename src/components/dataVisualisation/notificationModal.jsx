@@ -72,7 +72,6 @@ const NotificaionModal = (props) => {
         type="text"
         value={description}
         onChange={(e) => handleDescriptionChange(e)}
-
       />
     </PureModal>
   );

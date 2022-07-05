@@ -1,26 +1,35 @@
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import BootstrapTable from "react-bootstrap-table-next";
-import Sidebar from "../sidebar/Sidebar";
 import paginationFactory from "react-bootstrap-table2-paginator";
-
-// import "../sidebar/sidebar.css";
+import Sidebar from "../sidebar/Sidebar";
+import "../sidebar/sidebar.css";
 
 function ManageUser() {
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState();
-
+  const userType = JSON.parse(
+    atob(localStorage.getItem("token").split(".")[1])
+  ).userType;
+  const [view, setView] = useState(false);
+  const [multiselect,setMultiSelect] = useState([]);
   const link = "http://localhost:3001";
 
   useEffect(() => {
-    getData();
+    if (userType === "Admin") {
+      getData();
+      setView(true);
+    } else {
+      setView(false);
+      navigate("/unauth");
+    }
   }, []);
 
   const getData = () => {
     axios.get(link + "/api/users").then((res) => setData(res.data));
   };
-  let select = [];
+
   const navigate = useNavigate();
 
   const handleCreate = () => {
@@ -34,9 +43,9 @@ function ManageUser() {
   };
 
   const handleDelete = () => {
-    axios
-      .delete(link + "/api/users/" + selected)
-      .then((res) => console.log(res.data));
+     axios
+       .delete(link + "/api/users/" + selected)
+       .then((res) => console.log(res.data));
 
     const modData = data.filter((item) => item.id !== selected);
     setData(modData);
@@ -51,10 +60,13 @@ function ManageUser() {
       localStorage.setItem("selected", row.id);
       localStorage.setItem("details", JSON.stringify(row));
       setSelected(row.id);
-      select = isSelect;
-        console.log(row);
-      //   console.log(rowIndex);
-      //   console.log(e);
+      setMultiSelect(multiselect=>[...multiselect,row.id]);
+      if(multiselect.length>1){
+        alert("Cannot edit as multiple checkbox are selected");
+        setMultiSelect([])
+      }
+     
+      
     },
   };
 
@@ -103,44 +115,54 @@ function ManageUser() {
   ];
 
   return (
-    <div className="row">
-      <Sidebar />
-      <div className="col-11">
-        <div>
-          <h3>MANAGE USER</h3>
-        </div>
-        <div className="row my-3">
-          <button
-            className="ml-3 btn btn-success"
-            onClick={() => handleCreate()}
-          >
-            Create User
-          </button>
-          <button className="ml-3 btn btn-warning" onClick={() => handleEdit()}>
-            Edit
-          </button>
-          <button
-            className="ml-3 btn btn-danger"
-            onClick={() => handleDelete()}
-          >
-            Delete
-          </button>
-        </div>
+    <>
+      {view ? (
+        <div className="row">
+          <Sidebar />
+          <div className="col-11">
+            <div>
+              <h3>MANAGE USER</h3>
+            </div>
+            <div className="row my-3">
+              <button
+                className="ml-3 btn btn-success"
+                onClick={() => handleCreate()}
+              >
+                Create User
+              </button>
+              <button
+              
+                className="ml-3 btn btn-warning"
+                onClick={() => handleEdit()}
+              >
+                Edit
+              </button>
+              <button
+                className="ml-3 btn btn-danger"
+                onClick={() => handleDelete()}
+              >
+                Delete
+              </button>
+            </div>
 
-        <BootstrapTable
-          keyField="id"
-          data={data}
-          columns={columns}
-          striped
-          hover
-          condensed
-          pagination={paginationFactory({ sizePerPage: 10 })}
-          selectRow={selectRow}
-          wrapperClasses="table-responsive"
-          rowClasses="text-nowrap"
-        />
-      </div>
-    </div>
+            <BootstrapTable
+              keyField="id"
+              data={data}
+              columns={columns}
+              striped
+              hover
+              condensed
+              pagination={paginationFactory({ sizePerPage: 10 })}
+              selectRow={selectRow}
+              wrapperClasses="table-responsive"
+              rowClasses="text-nowrap"
+            />
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }
 export default ManageUser;

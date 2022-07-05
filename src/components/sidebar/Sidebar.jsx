@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { FaRegUserCircle, FaMinusCircle ,FaMeetup} from "react-icons/fa";
+import { FaRegUserCircle, FaMinusCircle, FaMeetup } from "react-icons/fa";
 import { IoIosPeople, IoIosAlbums } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
+import "./sidebar.css";
 
 const Sidebar = ({ children }) => {
+  const userType = JSON.parse(atob(localStorage.getItem('token').split('.')[1])).userType;
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -39,7 +41,6 @@ const Sidebar = ({ children }) => {
       icon: <IoIosAlbums />,
     },
 
-    
     {
       path: "/manageUser",
       name: "ManageUser",
@@ -64,7 +65,6 @@ const Sidebar = ({ children }) => {
       icon: <IoIosAlbums />,
     },
 
-
     {
       path: "/logout",
       name: "Logout",
@@ -74,14 +74,12 @@ const Sidebar = ({ children }) => {
   return (
     <div style={{ width: isOpen ? "190px" : "60px" }} className="sidebar">
       <div className="top_section">
-     
         <div style={{ marginLeft: isOpen ? "60px" : "0px" }} className="p-0">
-          <FaMeetup size={"32"}/>
+          <FaMeetup size={"32"} />
         </div>
       </div>
       <div>
-        {localStorage.getItem("userdetails") &&
-        JSON.parse(localStorage.getItem("userdetails")).userType === "Admin"
+        {userType === "Admin"
           ? sideList(menuItem)
           : sideList(menuItem2)}
       </div>

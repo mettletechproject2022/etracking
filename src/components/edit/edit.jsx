@@ -112,6 +112,9 @@ function Edit() {
                 className="btn btn-success my-3"
                 value="Update"
               />
+              <button className="ml-4 btn btn-success my-3">
+                Cancel
+              </button>
             </div>
           </form>
         </div>

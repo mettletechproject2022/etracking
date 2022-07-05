@@ -1,147 +1,147 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  .wrapper {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    /* background-image:  linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
-    background: #9cecfb; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #0052d4,
-      #65c7f7,
-      #9cecfb
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #0052d4,
-      #65c7f7,
-      #9cecfb
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  
-  div.wrapper2 {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    /* background-image:  linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
-    background: #215f00; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #e4e4d9,
-      #215f00
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #e4e4d9,
-      #215f00
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  
-  div.wrapper3 {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    /* background-image:  linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
-    background: #8e9eab; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #eef2f3,
-      #8e9eab
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #eef2f3,
-      #8e9eab
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  
-  div.wrapper4 {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    /* background-image:  linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
-    background: #ff00cc; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #333399,
-      #ff00cc
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #333399,
-      #ff00cc
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  .forgot {
-    margin-left: 285px;
-  }
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* background-image:  linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+  background: #9cecfb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0052d4,
+    #65c7f7,
+    #9cecfb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0052d4,
+    #65c7f7,
+    #9cecfb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+div.wrapper2 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* background-image:  linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+  background: #215f00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e4e4d9,
+    #215f00
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e4e4d9,
+    #215f00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+div.wrapper3 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* background-image:  linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+div.wrapper4 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* background-image:  linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+  background: #ff00cc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #333399,
+    #ff00cc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #333399,
+    #ff00cc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.forgot {
+  margin-left: 285px;
+}
+.form {
+  width: 40%;
+  box-shadow: -5px -5px 30px 5px black, 5px 5px 30px 5px blue;
+  padding: 50px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
   .form {
-    width: 40%;
-    box-shadow: -5px -5px 30px 5px black, 5px 5px 30px 5px blue;
-    padding: 50px;
-    margin-top: 30px;
-  }
-  
-  @media (max-width: 768px) {
-    .form {
-      width: 100%;
-    }
-    .logoo {
-      width: 100%;
-    }
-    .logoo2 {
-      width: 120%;
-    }
-    .forgot {
-      margin-left: 123px;
-    }
-  }
-  /* @media(max-width:320px){
-    .forgot{
-      margin-left: 107px;
-    }
-  } */
-  
-  .error-msg {
-    font-size: 12px;
     width: 100%;
-    color: red;
   }
-  .custom-input {
-    margin-bottom: 10px;
-  }
-  .success-msg {
-    width: 50%;
-    color: #0f834d;
-    font-weight: 600;
+  .logoo {
+    width: 100%;
   }
   .logoo2 {
-    cursor: pointer;
-    width: 12%;
+    width: 120%;
   }
-  .pointer {
-    cursor: pointer;
+  .forgot {
+    margin-left: 123px;
   }
+}
+/* @media(max-width:320px){
+  .forgot{
+    margin-left: 107px;
+  }
+} */
+
+.error-msg {
+  font-size: 12px;
+  width: 100%;
+  color: red;
+}
+.custom-input {
+  margin-bottom: 10px;
+}
+.success-msg {
+  width: 50%;
+  color: #0f834d;
+  font-weight: 600;
+}
+.logoo2 {
+  cursor: pointer;
+  width: 12%;
+}
+.pointer {
+  cursor: pointer;
+}

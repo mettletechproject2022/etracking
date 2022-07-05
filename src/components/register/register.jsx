@@ -1,11 +1,13 @@
-import "./register.css";
-import axios from "axios";
-//import TextBox from 'react-native-password-eye';
-
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+//import TextBox from 'react-native-password-eye';
+import "./register.css";
+
 
 function Register() {
+  const navigate=useNavigate();
   const {
     register,
     handleSubmit,
@@ -15,11 +17,13 @@ function Register() {
   } = useForm();
 
   const onSubmit = (data) => {
-    // const dataX=JSON.parse(data)+{userType:"Admin",directory:"\\dev2"}
-    // console.log(dataX);
+    const dataX = Object.assign(data, { userType: "", directory: "" });
+    axios
+      .post("http://localhost:3001/api/users/register", dataX)
+      .then((res) => console.log(res.data));
 
-    // axios.post("http://localhost:3001/api/users",{}).then((res) => console.log(res.data));
     reset();
+    navigate("/manageuser");
   };
 
   return (
@@ -68,7 +72,7 @@ function Register() {
               )}
             </div>
 
-            {/* <div className="form-group">
+            <div className="form-group">
               <label className="col-form-label">
                 <b>Password:</b>
               </label>
@@ -78,7 +82,8 @@ function Register() {
                 {...register("password", {
                   required: "password is Required",
                   pattern: {
-                    value: /^(?=.[0-9])(?=.[!@#$%^&])[a-zA-Z0-9!@#$%^&]{6,16}$/i,
+                    value:
+                      /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{8,}$/,
                     message: "Invalid password",
                   },
                 })}
@@ -89,7 +94,7 @@ function Register() {
               {errors.password && (
                 <small className="text-danger">{errors.password.message}</small>
               )}
-            </div> */}
+            </div>
 
             <div>
               <label className="col-form-label">
@@ -107,8 +112,6 @@ function Register() {
                 <option value="8">c:/mettletech/developer/20222007</option>
               </select>
             </div>
-
-        
 
             <div className="register">
               <input
