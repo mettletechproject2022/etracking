@@ -40,9 +40,10 @@ main {
   
 
 }
-.link:hover {
+.link:hover.Profile {
   background: lightskyblue;
   color: black;
+  display: block;
   transition: all 0.5s;
 }
 .active {

@@ -83,7 +83,7 @@ export const ChangePassword = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (PrePass === JSON.parse(localStorage.getItem("data")).password && passwordError == "" && cpasswordError == "") {
+    if (PrePass === JSON.parse(localStorage.getItem("data")).password && passwordError === "" && cpasswordError === "") {
       var data = JSON.parse(localStorage.getItem("data"));
       data["password"] = cpassword;
       localStorage.setItem("data", JSON.stringify(data));
