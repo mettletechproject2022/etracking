@@ -51,7 +51,24 @@ function ManageUser() {
     setData(modData);
     setSelected(null);
   };
-
+  const pagination = paginationFactory({
+    page: 1,
+    sizePerPage: 5,
+    lastPageText: '>>',
+    firstPageText: '<<',
+    nextPageText: '>',
+    prePageText: '<',
+    showTotal: true,
+    alwaysShowAllBtns: true,
+    // onPageChange: function (page, sizePerPage) {
+    //   console.log('page', page);
+    //   console.log('sizePerPage', sizePerPage);
+    // },
+    // onSizePerPageChange: function (page, sizePerPage) {
+    //   console.log('page', page);
+    //   console.log('sizePerPage', sizePerPage);
+    // }
+  });
   const selectRow = {
     mode: "checkbox",
     clickToSelect: false,
@@ -152,7 +169,8 @@ function ManageUser() {
               striped
               hover
               condensed
-              pagination={paginationFactory({ sizePerPage: 10 })}
+              // pagination={paginationFactory({ sizePerPage: 10 })}
+              pagination={pagination}
               selectRow={selectRow}
               wrapperClasses="table-responsive"
               rowClasses="text-nowrap"
