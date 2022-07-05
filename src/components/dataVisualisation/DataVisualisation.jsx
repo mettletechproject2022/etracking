@@ -5,6 +5,7 @@ import DateE from "./enddate";
 import ZoomModal from "./zoomModal";
 import NotificationModal from "./notificationModal";
 import Sidebar from "../sidebar/Sidebar";
+import DatePicker from "react-datepicker";
 
 const link = "http://localhost:3001";
 
@@ -21,7 +22,7 @@ const Checking = () => {
   const [notificationModal, setNotificationModal] = useState(false);
   const [notificationEmail, setNotificationEmail] = useState();
 
-  const data = JSON.parse(atob(localStorage.getItem('token').split('.')[1]));
+  const data = JSON.parse(atob(localStorage.getItem("token").split(".")[1]));
 
   const handleSelected = (e) => {
     setSelected(e);
@@ -49,14 +50,12 @@ const Checking = () => {
         .get(link + "/api/users")
         .then((res) => setDev(res.data))
         .catch((error) => console.log(error));
-    }
-    else {
+    } else {
       axios
         .get(link + "/api/users/" + data.id)
         .then((res) => setDevv(res.data))
         .catch((error) => console.log(error));
     }
-
   };
 
   const show = () => {
@@ -65,16 +64,15 @@ const Checking = () => {
         <option key={i} value={d.email}>
           {d.name}
         </option>
-      ))
+      ));
+    } else {
+      return (
+        <option value={devv.email !== undefined ? devv.email : ""}>
+          {devv.name !== undefined ? devv.name : ""}
+        </option>
+      );
     }
-
-    else {
-      return <option value={devv.email!==undefined?devv.email:""}>
-        {devv.name!==undefined?devv.name:""}
-      </option>
-    }
- 
-  }
+  };
 
   const slicer = (d) => {
     return d.slice(0, 10) + " " + d.slice(11, 19);
@@ -93,11 +91,26 @@ const Checking = () => {
           <div className="row m-0 p-2 shadow1">
             <div className="col-2 p-0">
               <p className="m-0">Start Date</p>
-              <DateS setStartDate={setStartDate} />
+              {/* <DateS setStartDate={setStartDate} /> */}
+              <DatePicker
+                selected={startDate}
+                dateFormat="dd-MM-yyyy"
+                onChange={setStartDate}
+                maxDate={endDate}
+              />
             </div>
             <div className="col-2 p-0">
               <p className="m-0">End Date</p>
-              <DateE setEndDate={setEndDate} />
+              {/* <DateE setEndDate={setEndDate} /> */}
+              <DatePicker
+                selected={endDate}
+                dateFormat="dd-MM-yyyy"
+                onChange={setEndDate}
+                maxDate={new Date()}
+                selectsEnd
+                startDate={startDate}
+                minDate={startDate}
+              />
             </div>
             <div className="col-4 p-0 px-4">
               <p className="m-0">Select user</p>
