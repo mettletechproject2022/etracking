@@ -2,15 +2,22 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Multiselect from "multiselect-react-dropdown";
 
 function Edit() {
   const link = "http://localhost:3001";
-
+  const [selected, setSelected] = useState();
   const dataX = JSON.parse(localStorage.getItem("details"));
-
+  const [dirList, setdirList] = useState([]);
+  const [selectedaccessdir, setSelectedAccessDir] = useState([]);
+  const navigate = useNavigate();
   const defaultData = {
     name: dataX.name,
     email: dataX.email,
+  };
+
+  const handleSelected = (e) => {
+    setSelected(e);
   };
 
   const {
@@ -20,17 +27,32 @@ function Edit() {
     reset,
     trigger,
   } = useForm({ defaultValues: defaultData });
-  const navigate = useNavigate();
 
   const onSubmit = (data) => {
+    const dataX = Object.assign(data, {
+      id: localStorage.getItem("selected"),
+      userType: selected,
+      dirAccess: selectedaccessdir,
+    });
     axios
-      .put(link + "/api/users/" + dataX.id, data)
+      .put(link + "/api/users/" + dataX.id, dataX)
       .then((res) => console.log(res.data));
     reset();
     localStorage.setItem("details", null);
     localStorage.setItem("selected", null);
     navigate("/manageuser");
   };
+
+  const getDir = () => {
+    axios
+      .post(link + "/api/users/getdirectory", {})
+      .then((res) => setdirList(res.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getDir();
+  }, []);
 
   return (
     <div className="container1 pt-5">
@@ -78,32 +100,42 @@ function Edit() {
               )}
             </div>
 
-            <div>
+            <div className="form-group">
               <label className="col-form-label">
                 <b>User Type:</b>
               </label>
-              <select id="dropdown1">
-                <option value="1">choose option</option>
-                <option value="2">User</option>
-                <option value="3">Admin</option>
+              <select
+                className="custom-select"
+                value={selected}
+                onChange={(e) => handleSelected(e.target.value)}
+              >
+                <option>choose option</option>
+                <option value="User">User</option>
+                <option value="Admin">Admin</option>
               </select>
             </div>
 
-            <div>
+            <div className="form-group">
               <label className="col-form-label">
-                <b>Directory:</b>
+                <b>Directory access:</b>
               </label>
-              <select id="dropdown2">
-                <option value="1">choose option</option>
-                <option value="2">c:/mettletech/developer/</option>
-                <option value="3">c:/mettletech/developer/20222001</option>
-                <option value="4">c:/mettletech/developer/20222002</option>
-                <option value="5">c:/mettletech/developer/20222003</option>
-                <option value="6">c:/mettletech/developer/20222004</option>
-                <option value="7">c:/mettletech/developer/20222005</option>
-                <option value="8">c:/mettletech/developer/20222006</option>
-                <option value="8">c:/mettletech/developer/20222007</option>
-              </select>
+              <Multiselect
+                style={{
+                  searchBox: {
+                    backgroundColor: "white",
+                  },
+                }}
+                isObject={false}
+                onRemove={(event) => {
+                  setSelectedAccessDir(event);
+                }}
+                onSelect={(event) => {
+                  setSelectedAccessDir(event);
+                }}
+                options={dirList}
+                selectedValues={[]}
+                showCheckbox
+              />
             </div>
 
             <div className="register">
@@ -112,9 +144,7 @@ function Edit() {
                 className="btn btn-success my-3"
                 value="Update"
               />
-              <button className="ml-4 btn btn-success my-3">
-                Cancel
-              </button>
+              <button className="ml-4 btn btn-success my-3">Cancel</button>
             </div>
           </form>
         </div>

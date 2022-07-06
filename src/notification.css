@@ -1,33 +1,33 @@
 *{
-    margin:   0px;
-    padding: 0px;
+  margin:   0px;
+  padding: 0px;
 }
 .notification{
-    width: 96%!important;
+  width: 96%!important;
 }
 
 /* <<<<<<<< HEAD
 .head-notification{
-    margin-top: 5px;
-    width: 100%;
-    background-color: rgb(245, 245, 245);
+  margin-top: 5px;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
 =======
 =======
 >>>>>>> 6103a03ac0b06d83a23c66c47ba856f1aa296187
 .head-notification {
-  margin: 20px;
-  width: 100%;
-  background-color: rgb(245, 245, 245);
+margin: 20px;
+width: 100%;
+background-color: rgb(245, 245, 245);
 }
 .head-notification h1 {
-  color:#250d62;
-    font-family: fantasy;
-    letter-spacing: 1px;
+color:#250d62;
+  font-family: fantasy;
+  letter-spacing: 1px;
 }
 .notify {
-  margin-left:  10px;
-  margin-right: 10px;
-  padding-top: 60px;
+margin-left:  10px;
+margin-right: 10px;
+padding-top: 60px;
 <<<<<<< HEAD
 >>>>>>> 6f9bfeaddbdc3414918e6c6ec632c4f8d51ba118
 } */
@@ -35,9 +35,9 @@
 } */
 
 .head-notification h1{
-    color: black}
+  color: black}
 .notify{
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 60px;
 }

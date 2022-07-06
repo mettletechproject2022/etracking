@@ -1,13 +1,18 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Multiselect from "multiselect-react-dropdown";
 import axios from "axios";
 //import TextBox from 'react-native-password-eye';
 import "./register.css";
 
+const link = "http://localhost:3001";
 
 function Register() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const [selected, setSelected] = useState();
+  const [dirList, setdirList] = useState([]);
+  const [selectedaccessdir, setSelectedAccessDir] = useState([]);
   const {
     register,
     handleSubmit,
@@ -16,8 +21,26 @@ function Register() {
     trigger,
   } = useForm();
 
+  const handleSelected = (e) => {
+    setSelected(e);
+  };
+
+  const getDir = () => {
+    axios
+      .post(link + "/api/users/getdirectory", {})
+      .then((res) => setdirList(res.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getDir();
+  }, []);
+
   const onSubmit = (data) => {
-    const dataX = Object.assign(data, { userType: "", directory: "" });
+    const dataX = Object.assign(data, {
+      userType: selected,
+      dirAccess: selectedaccessdir,
+    });
     axios
       .post("http://localhost:3001/api/users/register", dataX)
       .then((res) => console.log(res.data));
@@ -96,21 +119,45 @@ function Register() {
               )}
             </div>
 
-            <div>
+            <div className="form-group">
               <label className="col-form-label">
-                <b>Directory:</b>
+                <b>User Type:</b>
               </label>
-              <select id="dropdown2">
-                <option value="1">choose option</option>
-                <option value="2">c:/mettletech/developer/</option>
-                <option value="3">c:/mettletech/developer/20222001</option>
-                <option value="4">c:/mettletech/developer/20222002</option>
-                <option value="5">c:/mettletech/developer/20222003</option>
-                <option value="6">c:/mettletech/developer/20222004</option>
-                <option value="7">c:/mettletech/developer/20222005</option>
-                <option value="8">c:/mettletech/developer/20222006</option>
-                <option value="8">c:/mettletech/developer/20222007</option>
+              <select
+                className="custom-select"
+                value={selected}
+                onChange={(e) => handleSelected(e.target.value)}
+              >
+                <option>choose option</option>
+                <option value="User">User</option>
+                <option value="Admin">Admin</option>
               </select>
+            </div>
+
+            <div className="form-group">
+              <label className="col-form-label">
+                <b>Directory access:</b>
+              </label>
+              <Multiselect
+                style={{
+              
+                  searchBox: {
+                   backgroundColor:'white'
+                  }
+                }}
+              isObject={false}
+              onRemove={(event) => {
+
+                setSelectedAccessDir(event);
+              }}
+              onSelect={(event) => {
+
+                setSelectedAccessDir(event);
+              }}
+              options={dirList}
+              selectedValues={[]}
+              showCheckbox
+              />
             </div>
 
             <div className="register">

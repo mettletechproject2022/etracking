@@ -15,7 +15,7 @@ const Checking = () => {
   const [devv, setDevv] = useState([]);
   const [imgSelected, setImgSelected] = useState(null);
   const [imageHeader, setImageHeader] = useState();
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [zoomModal, setZoomModal] = useState(false);
@@ -33,21 +33,20 @@ const Checking = () => {
     setImgSelected(link + i);
   };
 
-// if else statement is to be used to verify the selected dropdown.
-//
-
-
-
+  // if else statement is to be used to verify the selected dropdown.
+  //
 
   const Checking = () => {
-    axios
-      .post(link + "/api/users/images", {
-        email: selected,
-        startDate: startDate,
-        endDate: endDate,
-      })
-      .then((res) => setDirArr(res.data))
-      .catch((error) => console.log(error));
+    if (selected !== "") {
+      axios
+        .post(link + "/api/users/images", {
+          email: selected,
+          startDate: startDate,
+          endDate: endDate,
+        })
+        .then((res) => setDirArr(res.data))
+        .catch((error) => console.log(error));
+    } else alert("Select one user");
   };
 
   const getDev = () => {
@@ -64,11 +63,25 @@ const Checking = () => {
     }
   };
 
+  const notification = (d) => {
+    if(data.userType==="Admin")
+    return <button
+      className="ml-3 btn btn-dark"
+      onClick={() => {
+        setNotificationModal(true);
+        setNotificationEmail(d.email);
+        handleImgSelected(slicer(d.createdAt), d.imagePath);
+      }}
+    >
+      Send Notificaion
+    </button>
+  };
+
   const show = () => {
     if (data.userType === "Admin") {
       return dev.map((d, i) => (
         <option key={i} value={d.email}>
-          {d.name} 
+          {d.name}
         </option>
       ));
     } else {
@@ -85,7 +98,6 @@ const Checking = () => {
   };
 
   useEffect(() => {
-    Checking();
     getDev();
   }, []);
 
@@ -94,9 +106,9 @@ const Checking = () => {
       <div className="row">
         <Sidebar />
         <div className="col-11">
-        <div className="commonname">
-          <h3>DATA VISUALISATION</h3>
-        </div>
+          <div className="commonname">
+            <h3>DATA VISUALISATION</h3>
+          </div>
           <div className="row m-0 p-2 shadow1">
             <div className="col-2 p-0">
               <p className="m-0">Start Date</p>
@@ -106,6 +118,7 @@ const Checking = () => {
                 dateFormat="dd-MM-yyyy"
                 onChange={setStartDate}
                 maxDate={endDate}
+                minDate={new Date("2022-06-01 0:0:0")}
               />
             </div>
             <div className="col-2 p-0">
@@ -162,19 +175,19 @@ const Checking = () => {
           />
           <div
             className="row m-0 mt-3 p-2 d-flex flex-wrap overflow-auto align-content-start shadow1"
-            style={{ height: "85vh" }}
+            style={{ height: "78vh" }}
           >
             {dirArr.map((d, i) => {
               return (
                 <div key={i} className="col-3 p-2">
-                  <div className="row m-0 p-2 shadow2">
+                  <div className="flex-direction-column m-0 p-2 shadow2">
                     <img
                       src={link + d.imagePath}
                       alt=""
                       className="img-fluid"
                     />
 
-                    <div className="my-3">
+                    <div className="flex-direction-column my-3">
                       <button
                         className=" btn btn-secondary"
                         onClick={() => {
@@ -184,18 +197,11 @@ const Checking = () => {
                       >
                         Zoom
                       </button>
-                      <button
-                        className="ml-3 btn btn-dark"
-                        onClick={() => {
-                          setNotificationModal(true);
-                          setNotificationEmail(d.email);
-                          handleImgSelected(slicer(d.createdAt), d.imagePath);
-                        }}
-                      >
-                        Send Notificaion
-                      </button>
+                      {notification(d)}
                     </div>
-                    <p className="my-2">{slicer(d.createdAt)}</p>
+                    <div className="flex-direction-columnmy-3">
+                      <p className="my-2">{slicer(d.createdAt)}</p>
+                    </div>
                   </div>
                 </div>
               );

@@ -4,13 +4,13 @@ import "../sidebar/sidebar.css";
 import "./logout.css";
 import { useNavigate } from "react-router-dom";
 
-const Logout = () => {
+const Logout = (props) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    alert('You are now logged out');
-    localStorage.removeItem("token");
-    localStorage.removeItem("userdetails");
+    alert("You are now logged out");
+    localStorage.clear();
+    props.setisLoggedIn(false);
     navigate("/");
   };
 
@@ -18,13 +18,16 @@ const Logout = () => {
     <div className="row container-fluid3">
       <Sidebar />
       <div>
-        {/* <button type="button" class="btn btn-outline-danger" onClick={() => handleLogout()}> */}
-      <div className="LogoutButton">
-        <button  id="LogoutButton" type="button" onClick={() => handleLogout()}>
-          Logout
-        </button>
+        <div className="LogoutButton">
+          <button
+            id="LogoutButton"
+            type="button"
+            onClick={() => handleLogout()}
+          >
+            Logout
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

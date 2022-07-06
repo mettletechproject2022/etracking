@@ -20,7 +20,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
 function App() {
-  const [isLoggedIn, setisLoggedIn] = useState(null);
+  const [isLoggedIn, setisLoggedIn] = useState(localStorage.getItem("token")?true:false);
 
   return (
     <div className="container-fluid">
@@ -111,6 +111,14 @@ function App() {
             element={
               <Protected isLoggedIn={isLoggedIn}>
                 <DataVisualisation />
+              </Protected>
+            }
+          />
+           <Route
+            path="/logout"
+            element={
+              <Protected isLoggedIn={isLoggedIn}>
+                <Logout />
               </Protected>
             }
           />
