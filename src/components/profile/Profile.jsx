@@ -13,14 +13,6 @@ const Profile = () => {
         <div className="commonname">
           <h3>PROFILE</h3>
         </div>
-        <div className="row my-3">
-          <button
-            className="ml-auto btn btn-success"
-            onClick={() => navigate("/changepass")}
-          >
-            Change Password
-          </button>
-        </div>
         <div className="row px-3 profilebox">
           <div className="col-7 p-3 name1 shadow1">
             <h3>Name: {data.name}</h3>

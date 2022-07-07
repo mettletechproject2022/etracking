@@ -14,10 +14,10 @@ export const Login = (props) => {
   const navigate = useNavigate();
   const link = "http://localhost:3001";
 
-  const popUpWindow = () => {
-    let params = `width=600,height=600,left=100,top=100,scrollbars=yes`;
-    window.open("/popupbutt", "test", params);
-  };
+  // const popUpWindow = () => {
+  //   let params = `width=600,height=600,left=100,top=100,scrollbars=yes`;
+  //   window.open("/popupbutt", "test", params);
+  // };
 
   const emailChecker = (email, password) => {
     axios
@@ -113,24 +113,6 @@ export const Login = (props) => {
 
             <br></br>
 
-            <div className="mb-3">
-              <div className="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  className="custom-control-input"
-                  id="customCheck1"
-                />
-                <label className="custom-control-label" htmlFor="customCheck1">
-                  Remember me
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <a className="forgot pointer" onClick={() => popUpWindow()}>
-                Forgot Password?
-              </a>
-            </div>
 
             <button
               type="submit"

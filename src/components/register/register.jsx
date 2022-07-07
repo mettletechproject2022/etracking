@@ -48,9 +48,12 @@ function Register() {
     reset();
     navigate("/manageuser");
   };
-
+const handlecancel=()=>{
+  navigate('/manageuser')
+}
   return (
-    <div className="container1 pt-5">
+      
+    <div className="container1 pt-5 vw-100 vh-100">
       <div className="row justify-content-sm-center pt-5">
         <div className="col-sm-6 shadow round pb-3">
           <h1 className="text-center pt-3 text-secondary">USER REGISTRATION</h1>
@@ -166,6 +169,7 @@ function Register() {
                 className="btn btn-primary my-3"
                 value="Register"
               />
+              <button className="ml-4 btn btn-danger my-3" onClick={handlecancel}>Cancel</button>
             </div>
           </form>
         </div>
