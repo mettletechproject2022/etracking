@@ -118,7 +118,7 @@ function App() {
             path="/logout"
             element={
               <Protected isLoggedIn={isLoggedIn}>
-                <Logout />
+                <Logout setisLoggedIn={setisLoggedIn}/>
               </Protected>
             }
           />
