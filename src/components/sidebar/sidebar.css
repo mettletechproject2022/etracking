@@ -8,18 +8,8 @@
 }
 
 .sidebar {
-  background: #232526; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #414345,
-    #232526
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #414345,
-    #232526
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #232526;
+  background: #02023b;
   height: 100vh;
 }
 
@@ -31,19 +21,19 @@
 }
 
 .sidebar ul li a:hover {
-  background-color: blue;
+  background-color: rgb(27 72 161);
   color: black;
 }
 
 .sidebar ul li .tooltip {
   position: absolute;
-  top: 0px;
-  left: 60px;
+  top: 8px;
+  left:55px;
   background: rgb(53, 53, 53);
   padding: 10px;
   border-radius: 5px;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 10px;
   letter-spacing: 3px;
   color: white;
   font-weight: bold;
@@ -56,6 +46,6 @@
 }
 
 .active {
-  background-color: blue;
+  background-color: rgb(27 72 161);
   color: #000416;
 }
