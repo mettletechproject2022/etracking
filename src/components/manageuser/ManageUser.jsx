@@ -10,10 +10,10 @@ const ManageUser = () => {
   const [gridApi, setGridApi] = useState(null);
 
   const columns = [
-    { headerName: "ID", field: "id", filter: "agTextColumnFilter",checkboxSelection:true,headerCheckboxSelection:true },
+    { headerName: "ID", field: "id", filter: "agTextColumnFilter", headerCheckboxSelection:true,checkboxSelection:true},
     { headerName: "Name", field: "name", filter: "agTextColumnFilter" },
     { headerName: "Email", field: "email", filter: "agTextColumnFilter" },
-    { headerName: "Directory", field: "dirAccess", filter: "agTextColumnFilter" },
+    { headerName: "Directory", field: "dirAccess", filter: "agTextColumnFilter", resizable: true }
   ]
   const datasource = {
     getRows(params) {
