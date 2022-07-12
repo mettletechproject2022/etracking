@@ -55,7 +55,7 @@ function Edit() {
   }, []);
 
   return (
-    <div className="container1 pt-5 vh-100 vw-auto">
+    <div className="container1 pt-5 vh-100 vw-100">
       <div className="row justify-content-sm-center pt-5">
         <div className="col-sm-6 shadow round pb-3">
           <h1 className="text-center pt-3 text-secondary">EDIT USER</h1>
