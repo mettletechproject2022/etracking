@@ -1,4 +1,3 @@
-import { useNavigate, Navigate } from "react-router-dom";
 import React, { useState } from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-enterprise';
@@ -7,22 +6,14 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import Sidebar from "../sidebar/Sidebar";
 import "../sidebar/sidebar.css";
 
-
 const ManageUser = () => {
-  const navigate = useNavigate();
-
-const handleCreate = () => {
-  navigate("/register");
-};
-
-
   const [gridApi, setGridApi] = useState(null);
 
   const columns = [
     { headerName: "ID", field: "id", filter: "agTextColumnFilter", headerCheckboxSelection:true,checkboxSelection:true},
-    { headerName: "Name", field: "name", filter: "agTextColumnFilter" },
-    { headerName: "Email", field: "email", filter: "agTextColumnFilter" },
-    { headerName: "Directory", field: "dirAccess", filter: "agTextColumnFilter", resizable: true }
+    { headerName: "Name", field: "name", filter: "agTextColumnFilter",minWidth:300 },
+    { headerName: "Email", field: "email", filter: "agTextColumnFilter",minWidth:400 },
+    { headerName: "Directory", field: "dirAccess", filter: "agTextColumnFilter",minWidth:600}
   ]
   const datasource = {
     getRows(params) {
@@ -81,7 +72,7 @@ const handleCreate = () => {
             <div className="row my-3">
               <button
                 className="ml-3 btn btn-success"
-                onClick={() => handleCreate()}
+                // onClick={() => handleCreate()}
               >
                 Create User
               </button>
