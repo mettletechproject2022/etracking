@@ -58,7 +58,6 @@ form.registerform {
 }
 
 div.container1 {
-  overflow:hidden;
   flex-direction:column;
   justify-content:center;
   align-items:center;
