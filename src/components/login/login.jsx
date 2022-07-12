@@ -33,7 +33,7 @@ export const Login = (props) => {
         localStorage.setItem("token", res.data.token);
         setSuccessMsg("You are successfully logged in");
         props.setisLoggedIn(true);
-        navigate("/profile");
+        navigate("/dataVisualisation");
       } else setSuccessMsg("Wrong Email or password or both");
     };
   };

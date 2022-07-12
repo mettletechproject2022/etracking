@@ -40,22 +40,20 @@ const Sidebar = () => {
 
   const menuItem = [
     {
-      path: "/profile",
-      name: "Profile",
-      icon: <FaRegUserCircle size={32} fill={'white'} />,
-    },
-    {
       path: "/dataVisualisation",
       name: "DataVisualisation",
       icon: <IoIosAlbums size={32} fill={'white'} />,
     },
-
     {
       path: "/manageUser",
       name: "ManageUser",
       icon: <IoIosPeople size={32} fill={'white'}/>,
     },
-
+    {
+      path: "/profile",
+      name: "Profile",
+      icon: <FaRegUserCircle size={32} fill={'white'} />,
+    },
     {
       path: "/logout",
       name: "Logout",
@@ -64,16 +62,16 @@ const Sidebar = () => {
   ];
   const menuItem2 = [
     {
-      path: "/profile",
-      name: "Profile",
-      icon: <FaRegUserCircle size={32} fill={'white'}/>,
-    },
-    {
       path: "/dataVisualisation",
       name: "DataVisualisation",
       icon: <IoIosAlbums size={32} fill={'white'}/>,
     },
-
+    {
+      path: "/profile",
+      name: "Profile",
+      icon: <FaRegUserCircle size={32} fill={'white'}/>,
+    },
+    
     {
       path: "/logout",
       name: "Logout",
