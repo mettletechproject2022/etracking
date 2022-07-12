@@ -132,7 +132,7 @@ export const Login = (props) => {
   useEffect(() => {
     if (props.isLoggedIn) {
       setView(false);
-      navigate("/profile");
+      navigate("/dataVisualisation");
     } else setView(true);
   }, []);
 

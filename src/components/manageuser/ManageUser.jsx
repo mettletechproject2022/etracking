@@ -1,3 +1,4 @@
+import { useNavigate, Navigate } from "react-router-dom";
 import React, { useState } from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-enterprise';
@@ -8,6 +9,12 @@ import "../sidebar/sidebar.css";
 
 const ManageUser = () => {
   const [gridApi, setGridApi] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleCreate = () => {
+    navigate("/register");
+  };
 
   const columns = [
     { headerName: "ID", field: "id", filter: "agTextColumnFilter", headerCheckboxSelection:true,checkboxSelection:true},
@@ -72,7 +79,7 @@ const ManageUser = () => {
             <div className="row my-3">
               <button
                 className="ml-3 btn btn-success"
-                // onClick={() => handleCreate()}
+                onClick={() => handleCreate()}
               >
                 Create User
               </button>
