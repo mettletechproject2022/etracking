@@ -43,6 +43,8 @@ const Checking = () => {
           email: selected,
           startDate: startDate,
           endDate: endDate,
+        },{
+          headers: { authorization: `Bearer ` + localStorage.getItem("token") },
         })
         .then((res) => setDirArr(res.data))
         .catch((error) => console.log(error));
@@ -52,12 +54,16 @@ const Checking = () => {
   const getDev = () => {
     if (data.userType === "Admin") {
       axios
-        .get(link + "/api/users")
+        .get(link + "/api/users",{
+          headers: { authorization: `Bearer ` + localStorage.getItem("token") },
+        })
         .then((res) => setDev(res.data))
         .catch((error) => console.log(error));
     } else {
       axios
-        .get(link + "/api/users/" + data.id)
+        .get(link + "/api/users/" + data.id,{
+          headers: { authorization: `Bearer ` + localStorage.getItem("token") },
+        })
         .then((res) => setDevv(res.data))
         .catch((error) => console.log(error));
     }

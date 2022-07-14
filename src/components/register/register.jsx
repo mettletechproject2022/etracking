@@ -13,6 +13,8 @@ function Register() {
   const [selected, setSelected] = useState();
   const [dirList, setdirList] = useState([]);
   const [selectedaccessdir, setSelectedAccessDir] = useState([]);
+  const [unique, setUnique] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -27,7 +29,13 @@ function Register() {
 
   const getDir = () => {
     axios
-      .post(link + "/api/users/getdirectory", {})
+      .post(
+        link + "/api/users/getdirectory",
+        {},
+        {
+          headers: { authorization: `Bearer ` + localStorage.getItem("token") },
+        }
+      )
       .then((res) => setdirList(res.data))
       .catch((error) => console.log(error));
   };
@@ -42,22 +50,33 @@ function Register() {
       dirAccess: selectedaccessdir,
     });
     axios
-      .post("http://localhost:3001/api/users/register", dataX)
-      .then((res) => console.log(res.data));
-
-    reset();
+      .post("http://localhost:3001/api/users/register", dataX, {
+         headers: { authorization: `Bearer ` + localStorage.getItem("token") },
+      })
+      .then((res) => updater(res))
+      .catch((err) => console.log(err));
+  };
+  const handlecancel = () => {
     navigate("/manageuser");
   };
-const handlecancel=()=>{
-  navigate('/manageuser')
-}
+  const updater = (res) => {
+    if (res.status === 200 && 'ER_DUP_ENTRY') {
+      setUnique(true);
+    } else {
+       setUnique(false)
+       reset();
+      navigate("/manageuser");
+   
+    }
+    console.log(res)
+  };
   return (
-      
     <div className="container1 pt-5 vw-100 vh-auto">
       <div className="row justify-content-sm-center pt-5">
         <div className="col-sm-6 shadow round pb-3">
           <h1 className="text-center pt-3 text-secondary">USER REGISTRATION</h1>
           <form className="registerform" onSubmit={handleSubmit(onSubmit)}>
+            {unique && <h3 style={{color:'red'}}>Email id already exists!!!!</h3>}
             <div className="form-group">
               <label className="col-form-label">
                 <b>Full Name:</b>
@@ -143,23 +162,20 @@ const handlecancel=()=>{
               </label>
               <Multiselect
                 style={{
-              
                   searchBox: {
-                   backgroundColor:'white'
-                  }
+                    backgroundColor: "white",
+                  },
                 }}
-              isObject={false}
-              onRemove={(event) => {
-
-                setSelectedAccessDir(event);
-              }}
-              onSelect={(event) => {
-
-                setSelectedAccessDir(event);
-              }}
-              options={dirList}
-              selectedValues={[]}
-              showCheckbox
+                isObject={false}
+                onRemove={(event) => {
+                  setSelectedAccessDir(event);
+                }}
+                onSelect={(event) => {
+                  setSelectedAccessDir(event);
+                }}
+                options={dirList}
+                selectedValues={[]}
+                showCheckbox
               />
             </div>
 
@@ -169,7 +185,12 @@ const handlecancel=()=>{
                 className="btn btn-primary my-3"
                 value="Register"
               />
-              <button className="ml-4 btn btn-danger my-3" onClick={handlecancel}>Cancel</button>
+              <button
+                className="ml-4 btn btn-danger my-3"
+                onClick={handlecancel}
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </div>
