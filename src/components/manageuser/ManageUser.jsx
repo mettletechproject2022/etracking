@@ -16,7 +16,6 @@ const ManageUser = () => {
     navigate("/register");
   };
 
-
   const [gridApi, setGridApi] = useState(null);
 
   const columns = [

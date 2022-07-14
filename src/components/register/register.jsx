@@ -17,6 +17,7 @@ function Register() {
 
   const {
     register,
+    getValues,
     handleSubmit,
     formState: { errors },
     reset,
@@ -51,7 +52,7 @@ function Register() {
     });
     axios
       .post("http://localhost:3001/api/users/register", dataX, {
-         headers: { authorization: `Bearer ` + localStorage.getItem("token") },
+        headers: { authorization: `Bearer ` + localStorage.getItem("token") },
       })
       .then((res) => updater(res))
       .catch((err) => console.log(err));
@@ -60,15 +61,15 @@ function Register() {
     navigate("/manageuser");
   };
   const updater = (res) => {
-    if (res.status === 200 && 'ER_DUP_ENTRY') {
+    if (res.status === 200 && res.data === "ER_DUP_ENTRY") {
       setUnique(true);
     } else {
-       setUnique(false)
-       reset();
+      setUnique(false);
+      reset();
+      alert("new user successfully registered");
       navigate("/manageuser");
-   
     }
-    console.log(res)
+    console.log(res);
   };
   return (
     <div className="container1 pt-5 vw-100 vh-auto">
@@ -76,7 +77,9 @@ function Register() {
         <div className="col-sm-6 shadow round pb-3">
           <h1 className="text-center pt-3 text-secondary">USER REGISTRATION</h1>
           <form className="registerform" onSubmit={handleSubmit(onSubmit)}>
-            {unique && <h3 style={{color:'red'}}>Email id already exists!!!!</h3>}
+            {unique && (
+              <h3 style={{ color: "red" }}>Email id already exists!!!!</h3>
+            )}
             <div className="form-group">
               <label className="col-form-label">
                 <b>Full Name:</b>
@@ -140,7 +143,37 @@ function Register() {
                 <small className="text-danger">{errors.password.message}</small>
               )}
             </div>
-
+            <div className="form-group">
+              <label className="col-form-label">
+                <b>Confirm Password:</b>
+              </label>
+              <input
+                type="password"
+                className={`form-control ${errors.cpassword && "invalid"}`}
+                {...register("cpassword", {
+                  required: "Confirm password is Required",
+                  validate: (value) => {
+                    if (value === getValues("password")) {
+                      return true;
+                    } else {
+                      return (
+                        <span>
+                          Confirm Password fields don't match with Password
+                        </span>
+                      );
+                    }
+                  },
+                })}
+                onKeyUp={() => {
+                  trigger("cpassword");
+                }}
+              />
+              {errors.cpassword && (
+                <small className="text-danger">
+                  {errors.cpassword.message}
+                </small>
+              )}
+            </div>
             <div className="form-group">
               <label className="col-form-label">
                 <b>User Type:</b>
