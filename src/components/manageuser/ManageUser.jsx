@@ -54,7 +54,7 @@ const ManageUser = () => {
         url += `${filter}=${filterModel[filter].filter}&`
       })
       //Pagination
-      url += `_start=${startRow}&_end=${endRow}`
+      // url += `_start=${startRow}&_end=${endRow}`
       // fetch(url)
       //   .then(httpResponse => httpResponse.json())
       fetch(url,{
