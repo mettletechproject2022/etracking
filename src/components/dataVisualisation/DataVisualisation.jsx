@@ -57,7 +57,7 @@ const Checking = () => {
         .get(link + "/api/users",{
           headers: { authorization: `Bearer ` + localStorage.getItem("token") },
         })
-        .then((res) => setDev(res.data))
+        .then((res) => setDev(res.data.filter(d=>d.userType==='User')))
         .catch((error) => console.log(error));
     } else {
       axios
@@ -84,8 +84,10 @@ const Checking = () => {
   };
 
   const show = () => {
+    console.log(dev)
     if (data.userType === "Admin") {
       return dev.map((d, i) => (
+        
         <option key={i} value={d.email}>
           {d.name}
         </option>
@@ -141,14 +143,14 @@ const Checking = () => {
               />
             </div>
             <div className="col-4 p-0 px-4">
-              <p className="m-0">Select user</p>
+              <p className="m-0">{data.userType==='Admin'?'Select user':'Directory'}</p>
               <div className="input-group">
                 <select
                   className="custom-select"
                   value={selected}
                   onChange={(e) => handleSelected(e.target.value)}
                 >
-                  <option>Choose...</option>
+                  {data.userType==='Admin'?<option>Choose...</option>:<></>}
                   {show()}
                 </select>
               </div>

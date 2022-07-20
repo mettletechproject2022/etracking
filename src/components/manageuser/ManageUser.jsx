@@ -10,13 +10,36 @@ import "../sidebar/sidebar.css";
 
 
 const ManageUser = () => {
+  const [gridApi, setGridApi] = useState(null);
+  var selected=[];
+  var length=0;
   const navigate = useNavigate();
 
   const handleCreate = () => {
     navigate("/register");
   };
-
-  const [gridApi, setGridApi] = useState(null);
+  const handleEdit = () => {
+    if(length===0){
+      alert("please select");
+    }else if(length>1){
+      alert("please select only one");
+    }else{
+      console.log(selected);
+    console.log(length);
+    // navigate("/edit");
+    }
+    
+  };
+  const confirmDelete = () => {
+    if(length===0){
+      alert("please select");
+    }else{
+    console.log(selected);
+    console.log(length);
+    // navigate("/register");
+    }
+  };
+  
 
   const columns = [
     { headerName: "ID", field: "id", filter: "agTextColumnFilter", headerCheckboxSelection: true, checkboxSelection: true },
@@ -82,7 +105,9 @@ const ManageUser = () => {
 
   //function will trigger once selection changed
   const onSelectionChanged = (event) => {
-    console.log(event.api.getSelectedRows())
+    // console.log(event.api.getSelectedRows());
+    selected= event.api.getSelectedRows();
+    length=event.api.getSelectedRows().length;
   }
 
   //function to allow selection to row
@@ -105,16 +130,16 @@ const ManageUser = () => {
               Create User
             </button>
             <button
-              // disabled={selected === null ? true : false}
+              // disabled={length === 0 ? true : false}
               className="ml-3 btn btn-warning"
-            // onClick={() => handleEdit()}
+            onClick={() => handleEdit()}
             >
               Edit
             </button>
             <button
-              // disabled={selected === null ? true : false}
+              // disabled={length === 0 ? true : false}
               className="ml-3 btn btn-danger"
-            // onClick={() => confirmDelete()}
+            onClick={() => confirmDelete()}
             >
               Delete
             </button>
