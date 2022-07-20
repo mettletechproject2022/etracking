@@ -25,7 +25,7 @@ const ZoomModal = (props) => {
       }}
     >
    
-      <ImageLoader link={props.imgSelected} />
+      <ImageLoader dirArr={props.dirArr} link={props.imgSelected} />
     </PureModal>
   );
 };

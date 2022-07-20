@@ -165,6 +165,7 @@ const Checking = () => {
           </div>
 
           <ZoomModal
+            dirArr={dirArr}
             zoomModal={zoomModal}
             imgSelected={imgSelected}
             imageHeader={imageHeader}
@@ -198,10 +199,10 @@ const Checking = () => {
                         className=" btn btn-secondary"
                         onClick={() => {
                           setZoomModal(true);
-                          handleImgSelected(slicer(d.createdAt), d.imagePath);
+                          handleImgSelected(slicer(d.createdAt),  d.imagePath);
                         }}
                       >
-                        Zoom
+                        Open
                       </button>
                       {notification(d)}
                     </div>
