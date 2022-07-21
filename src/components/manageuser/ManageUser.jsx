@@ -1,7 +1,9 @@
 import { useNavigate, Navigate } from "react-router-dom";
 import React, { useEffect, useState } from 'react'
 import { AgGridReact } from 'ag-grid-react';
-//import axios from'axios';
+import axios from'axios';
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 import 'ag-grid-enterprise';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
@@ -10,7 +12,11 @@ import "../sidebar/sidebar.css";
 
 
 const ManageUser = () => {
+  const link = "http://localhost:3001";
+  const [data, setData] = useState([]);
+  const [ setSelected] = useState();
   const [gridApi, setGridApi] = useState(null);
+  
   var selected=[];
   var length=0;
   const navigate = useNavigate();
@@ -24,18 +30,48 @@ const ManageUser = () => {
     }else if(length>1){
       alert("please select only one");
     }else{
-      console.log(selected);
+      console.log(selected[0].id);
     console.log(length);
     // navigate("/edit");
     }
     
   };
+
+
+  const handleDelete = () => {
+    if (selected !== null) {
+      axios
+        .delete(link + "/api/users/" + selected[0].id)
+        .then((res) => console.log(res.data));
+
+      const modData = data.filter((item) => item.id !== selected);
+      setData(modData);
+      // setSelected(null);
+      // alert(res.data);
+    }
+  };
+
+
   const confirmDelete = () => {
     if(length===0){
       alert("please select");
     }else{
     console.log(selected);
     console.log(length);
+     confirmAlert({
+      title: "Confirm to delete",
+      message: "Are you sure to do this?",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => handleDelete(),
+        },
+        {
+          label: "No",
+          onClick: () => {},
+        },
+      ],
+    });
     // navigate("/register");
     }
   };
