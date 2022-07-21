@@ -48,7 +48,7 @@ const Checking = () => {
         })
         .then((res) => setDirArr(res.data))
         .catch((error) => console.log(error));
-    } else alert("Select one user");
+    } else alert(data.userType==='Admin'?"Select one user":"Please select your directory");
   };
 
   const getDev = () => {
@@ -150,7 +150,7 @@ const Checking = () => {
                   value={selected}
                   onChange={(e) => handleSelected(e.target.value)}
                 >
-                  {data.userType==='Admin'?<option>Choose...</option>:<></>}
+                  {data.userType==='Admin'?<option>Choose...</option>:<option></option>}
                   {show()}
                 </select>
               </div>
